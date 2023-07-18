@@ -3,27 +3,310 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		222CD4B53E499C65C4504A86 /* Pods_The_Support_Guide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA5E5A1A739B51FDF9FE675B /* Pods_The_Support_Guide.framework */; };
+		5D032D1229F9A80F00770D0A /* CreateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D032D1129F9A80F00770D0A /* CreateProfileViewController.swift */; };
+		5D1090BE2A29F72A00622600 /* BusinessReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1090BD2A29F72A00622600 /* BusinessReportViewController.swift */; };
+		5D1090C02A2A189600622600 /* BusinessEditOwnerProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1090BF2A2A189600622600 /* BusinessEditOwnerProfileController.swift */; };
+		5D1DC6B52A2F663000EE2D80 /* MembersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1DC6B42A2F663000EE2D80 /* MembersTableViewCell.swift */; };
+		5D210A182A1F8F12001DB338 /* FranchiseAddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D210A172A1F8F12001DB338 /* FranchiseAddNoteViewController.swift */; };
+		5D32EC812A48A13300187310 /* FranchiseAddFollowUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D32EC802A48A13300187310 /* FranchiseAddFollowUpController.swift */; };
+		5D32EC832A48D8A500187310 /* SalesAddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D32EC822A48D8A500187310 /* SalesAddGoalViewController.swift */; };
+		5D33887B2A20C57500C01F7D /* FranchiseEditBusinessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D33887A2A20C57500C01F7D /* FranchiseEditBusinessController.swift */; };
+		5D33887D2A20CCCF00C01F7D /* FranchiseEditFundraiserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D33887C2A20CCCF00C01F7D /* FranchiseEditFundraiserViewController.swift */; };
+		5D33887F2A20D28000C01F7D /* FranchiseEditPipelineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D33887E2A20D28000C01F7D /* FranchiseEditPipelineController.swift */; };
+		5D3388822A20D8EF00C01F7D /* BusinessTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3388812A20D8EF00C01F7D /* BusinessTabbarViewController.swift */; };
+		5D3388842A20E0D300C01F7D /* BusinessDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3388832A20E0D300C01F7D /* BusinessDashboardViewController.swift */; };
+		5D35217D2A3690A2005117CA /* UserViewVoucherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D35217C2A3690A2005117CA /* UserViewVoucherController.swift */; };
+		5D35217F2A3722C1005117CA /* RedeemHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D35217E2A3722C1005117CA /* RedeemHistoryModel.swift */; };
+		5D3521832A374506005117CA /* VoucherSuccessfulRedemeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3521822A374506005117CA /* VoucherSuccessfulRedemeedViewController.swift */; };
+		5D3521852A37462F005117CA /* redemeed.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D3521842A37462F005117CA /* redemeed.json */; };
+		5D3521872A374973005117CA /* OfferRedeemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3521862A374973005117CA /* OfferRedeemTableViewCell.swift */; };
+		5D3A4A112A158C4600E23AED /* AdminTrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A4A102A158C4600E23AED /* AdminTrainingViewController.swift */; };
+		5D3A4A132A158F4600E23AED /* CopyEmailPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A4A122A158F4600E23AED /* CopyEmailPasswordViewController.swift */; };
+		5D3A4A152A1592CB00E23AED /* TrainingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A4A142A1592CB00E23AED /* TrainingTableView.swift */; };
+		5D3A4A172A1593E300E23AED /* TrainingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A4A162A1593E300E23AED /* TrainingModel.swift */; };
+		5D3A4A192A15A78A00E23AED /* AdminViewFranchiseProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A4A182A15A78A00E23AED /* AdminViewFranchiseProfileViewController.swift */; };
+		5D3CA25F2A33C39700F730DE /* StoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3CA25E2A33C39700F730DE /* StoreTableViewCell.swift */; };
+		5D3CA2612A33C47800F730DE /* BusinessDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3CA2602A33C47800F730DE /* BusinessDetailsViewController.swift */; };
+		5D3CA2632A33C8FC00F730DE /* StoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3CA2622A33C8FC00F730DE /* StoreModel.swift */; };
+		5D3CA2652A33CCAF00F730DE /* BusinessAddStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3CA2642A33CCAF00F730DE /* BusinessAddStoreViewController.swift */; };
+		5D4DA5F92A2A20AC0017AD3E /* OwnerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4DA5F82A2A20AC0017AD3E /* OwnerModel.swift */; };
+		5D4FA80929FAF40600C0E1F2 /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4FA80829FAF40600C0E1F2 /* SuccessViewController.swift */; };
+		5D4FA80D29FAF80100C0E1F2 /* FundraiserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4FA80C29FAF80100C0E1F2 /* FundraiserModel.swift */; };
+		5D4FA80F29FB0DD100C0E1F2 /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D4FA80E29FB0DD100C0E1F2 /* success.json */; };
+		5D4FA81129FB0EA500C0E1F2 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4FA81029FB0EA500C0E1F2 /* TabbarViewController.swift */; };
+		5D4FA81329FB0F8D00C0E1F2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4FA81229FB0F8D00C0E1F2 /* HomeViewController.swift */; };
+		5D4FA81529FB0FB000C0E1F2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4FA81429FB0FB000C0E1F2 /* MapViewController.swift */; };
+		5D4FA81729FB100600C0E1F2 /* FavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4FA81629FB100600C0E1F2 /* FavouriteViewController.swift */; };
+		5D4FA81929FB101E00C0E1F2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4FA81829FB101E00C0E1F2 /* ProfileViewController.swift */; };
+		5D4FA81B29FB617400C0E1F2 /* BusinessTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4FA81A29FB617400C0E1F2 /* BusinessTableViewCell.swift */; };
+		5D51BD282A24C578003EF23F /* VoucherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D51BD272A24C578003EF23F /* VoucherTableViewCell.swift */; };
+		5D51BD2A2A24C5F3003EF23F /* BusinessVoucherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D51BD292A24C5F3003EF23F /* BusinessVoucherViewController.swift */; };
+		5D5A983E29FC6C8000FDF133 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5A983D29FC6C8000FDF133 /* CategoryModel.swift */; };
+		5D5B66182A50F742007E0EFA /* LikeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5B66172A50F742007E0EFA /* LikeModel.swift */; };
+		5D60BAE32A24CF680019E144 /* BusinessAddVoucherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D60BAE22A24CF680019E144 /* BusinessAddVoucherViewController.swift */; };
+		5D60ED5C2A366BC500F2B93A /* GoogleReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D60ED5B2A366BC500F2B93A /* GoogleReviewModel.swift */; };
+		5D60ED5E2A366F1E00F2B93A /* ViewOwnerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D60ED5D2A366F1E00F2B93A /* ViewOwnerProfileViewController.swift */; };
+		5D60ED602A3674B000F2B93A /* UserBusinessAllLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D60ED5F2A3674B000F2B93A /* UserBusinessAllLocationViewController.swift */; };
 		5D6AB1A229F8A2DC00E241AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6AB1A129F8A2DC00E241AB /* AppDelegate.swift */; };
-		5D6AB1A429F8A2DC00E241AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6AB1A329F8A2DC00E241AB /* SceneDelegate.swift */; };
-		5D6AB1A629F8A2DC00E241AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6AB1A529F8A2DC00E241AB /* ViewController.swift */; };
-		5D6AB1A929F8A2DC00E241AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D6AB1A729F8A2DC00E241AB /* Main.storyboard */; };
+		5D6AB1A629F8A2DC00E241AB /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6AB1A529F8A2DC00E241AB /* WelcomeViewController.swift */; };
 		5D6AB1AB29F8A2DD00E241AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D6AB1AA29F8A2DD00E241AB /* Assets.xcassets */; };
 		5D6AB1AE29F8A2DD00E241AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D6AB1AC29F8A2DD00E241AB /* LaunchScreen.storyboard */; };
+		5D6AB1B729F8AE4D00E241AB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D6AB1B629F8AE4D00E241AB /* GoogleService-Info.plist */; };
+		5D6AB1C329F8AF0600E241AB /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5D6AB1BC29F8AEFF00E241AB /* Poppins-ExtraBold.ttf */; };
+		5D6AB1C429F8AF0600E241AB /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5D6AB1BD29F8AF0000E241AB /* Poppins-Light.ttf */; };
+		5D6AB1C529F8AF0600E241AB /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5D6AB1BE29F8AF0100E241AB /* Poppins-Bold.ttf */; };
+		5D6AB1C629F8AF0600E241AB /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5D6AB1BF29F8AF0200E241AB /* Poppins-Black.ttf */; };
+		5D6AB1C729F8AF0600E241AB /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5D6AB1C029F8AF0300E241AB /* Poppins-Medium.ttf */; };
+		5D6AB1C829F8AF0600E241AB /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5D6AB1C129F8AF0500E241AB /* Poppins-Regular.ttf */; };
+		5D6AB1C929F8AF0600E241AB /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5D6AB1C229F8AF0600E241AB /* Poppins-SemiBold.ttf */; };
+		5D6AB1CC29F8B0F200E241AB /* MyExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6AB1CB29F8B0F200E241AB /* MyExtensions.swift */; };
+		5D6AB1CE29F8B8A500E241AB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6AB1CD29F8B8A500E241AB /* Constants.swift */; };
+		5D6AB1D029F8B8D900E241AB /* GooglePlacesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6AB1CF29F8B8D900E241AB /* GooglePlacesManager.swift */; };
+		5D6AB1D229F8B8F000E241AB /* MyGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6AB1D129F8B8F000E241AB /* MyGesture.swift */; };
+		5D6AB1D429F8B98F00E241AB /* EntryPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6AB1D329F8B98F00E241AB /* EntryPageViewController.swift */; };
+		5D6AB1D729F8C1E100E241AB /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6AB1D629F8C1E100E241AB /* UserModel.swift */; };
+		5D6AB1D929F8EAAE00E241AB /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6AB1D829F8EAAE00E241AB /* SignInViewController.swift */; };
+		5D6AB1DB29F8ED7300E241AB /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6AB1DA29F8ED7300E241AB /* RegisterViewController.swift */; };
+		5D6E610B2A03107400363488 /* premium.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D6E610A2A03107400363488 /* premium.json */; };
+		5D6E610D2A03123700363488 /* GoPremiumPresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6E610C2A03123700363488 /* GoPremiumPresentationViewController.swift */; };
+		5D79BF3D2A255E3300D26EDE /* VoucherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D79BF3C2A255E3300D26EDE /* VoucherModel.swift */; };
+		5D7FB2FC2A178CC900EE7274 /* GoalsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7FB2FB2A178CC900EE7274 /* GoalsTableViewCell.swift */; };
+		5D7FB2FE2A17959000EE7274 /* AddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7FB2FD2A17959000EE7274 /* AddGoalViewController.swift */; };
+		5D7FB3002A1797B800EE7274 /* GoalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7FB2FF2A1797B800EE7274 /* GoalModel.swift */; };
+		5D7FB3022A17A9A800EE7274 /* FranchiseTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7FB3012A17A9A800EE7274 /* FranchiseTabbarViewController.swift */; };
+		5D8357D62A324E7A00C3DF81 /* SalesAddMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8357D52A324E7A00C3DF81 /* SalesAddMemberViewController.swift */; };
+		5D8357DA2A32517D00C3DF81 /* SalesMemberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8357D92A32517D00C3DF81 /* SalesMemberModel.swift */; };
+		5D8357DC2A3269A500C3DF81 /* SalesEditMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8357DB2A3269A500C3DF81 /* SalesEditMemberViewController.swift */; };
+		5D8357DE2A327F1600C3DF81 /* FundraiserTransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8357DD2A327F1600C3DF81 /* FundraiserTransactionModel.swift */; };
+		5D8357E02A3280D400C3DF81 /* SalesMemberTransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8357DF2A3280D400C3DF81 /* SalesMemberTransactionsViewController.swift */; };
+		5D8357E22A3285B900C3DF81 /* MemberTransactionTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8357E12A3285B900C3DF81 /* MemberTransactionTableCell.swift */; };
+		5D84A7E72A199530005ADC4C /* FranchiseAddFundraiserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D84A7E62A199530005ADC4C /* FranchiseAddFundraiserViewController.swift */; };
+		5D84A7E92A199554005ADC4C /* FranchiseFundraiserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D84A7E82A199554005ADC4C /* FranchiseFundraiserViewController.swift */; };
+		5D84A7EB2A199583005ADC4C /* FranchiseCopyFundraiserIdPasswordViewControlelr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D84A7EA2A199583005ADC4C /* FranchiseCopyFundraiserIdPasswordViewControlelr.swift */; };
+		5D84A7ED2A199C17005ADC4C /* FranchisePipelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D84A7EC2A199C17005ADC4C /* FranchisePipelineViewController.swift */; };
+		5D84A7EF2A199C40005ADC4C /* FranchiseAddPipelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D84A7EE2A199C3F005ADC4C /* FranchiseAddPipelineViewController.swift */; };
+		5D84A7F12A199E24005ADC4C /* PipelineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D84A7F02A199E24005ADC4C /* PipelineModel.swift */; };
+		5D8938B72A33D22F007DA343 /* BusinessEditStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8938B62A33D22F007DA343 /* BusinessEditStoreViewController.swift */; };
+		5D8938B92A33EAC8007DA343 /* FranchiseB2BDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8938B82A33EAC8007DA343 /* FranchiseB2BDetailsViewController.swift */; };
+		5D966EC42A13A35E00B5A4C1 /* EditFranchiseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D966EC32A13A35E00B5A4C1 /* EditFranchiseViewController.swift */; };
+		5D966EC62A13AC2700B5A4C1 /* AdminProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D966EC52A13AC2700B5A4C1 /* AdminProfileViewController.swift */; };
+		5D966ECA2A13B13600B5A4C1 /* AddTrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D966EC92A13B13600B5A4C1 /* AddTrainingViewController.swift */; };
+		5D966ECC2A13B55700B5A4C1 /* Franchise.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D966ECB2A13B55700B5A4C1 /* Franchise.storyboard */; };
+		5D9F109F2A09525600470D52 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F109E2A09525600470D52 /* CategoriesViewController.swift */; };
+		5D9F10A12A0953A900470D52 /* CategoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F10A02A0953A900470D52 /* CategoriesTableViewCell.swift */; };
+		5D9F10A32A09975900470D52 /* ShowAllBusinessesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F10A22A09975900470D52 /* ShowAllBusinessesViewController.swift */; };
+		5D9F10A52A09A07200470D52 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F10A42A09A07200470D52 /* NotificationModel.swift */; };
+		5D9F10A72A09A09500470D52 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F10A62A09A09500470D52 /* NotificationTableViewCell.swift */; };
+		5D9F10A92A09A0B700470D52 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F10A82A09A0B700470D52 /* NotificationViewController.swift */; };
+		5D9F10AB2A09A27A00470D52 /* RedeemHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F10AA2A09A27A00470D52 /* RedeemHistoryViewController.swift */; };
+		5D9F10AD2A09A4C600470D52 /* Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D9F10AC2A09A4C600470D52 /* Admin.storyboard */; };
+		5D9F10B02A09A56E00470D52 /* AdminTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F10AF2A09A56E00470D52 /* AdminTabbarViewController.swift */; };
+		5D9F10B22A09B2E400470D52 /* 142230-login.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D9F10B12A09B2E400470D52 /* 142230-login.json */; };
+		5D9F10B62A0E5E6100470D52 /* FranchiseViewTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F10B52A0E5E6100470D52 /* FranchiseViewTableView.swift */; };
+		5D9F10B82A0E618B00470D52 /* AdminFranchisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F10B72A0E618B00470D52 /* AdminFranchisesViewController.swift */; };
+		5D9F10BA2A0E639D00470D52 /* FranchiseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F10B92A0E639D00470D52 /* FranchiseModel.swift */; };
+		5D9F10BC2A0E697800470D52 /* AddFranchiseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F10BB2A0E697800470D52 /* AddFranchiseViewController.swift */; };
+		5D9F11042A13611F00470D52 /* Google_Places_Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F11032A13611F00470D52 /* Google_Places_Cell.swift */; };
+		5DA428422A1C9B6D009225A4 /* FranchiseTrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA428412A1C9B6D009225A4 /* FranchiseTrainingViewController.swift */; };
+		5DA428442A1C9C3F009225A4 /* B2B.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DA428432A1C9C3F009225A4 /* B2B.storyboard */; };
+		5DA428462A1C9C4E009225A4 /* Sales.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DA428452A1C9C4E009225A4 /* Sales.storyboard */; };
+		5DA428482A1C9ED6009225A4 /* RecentlyAddedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA428472A1C9ED6009225A4 /* RecentlyAddedModel.swift */; };
+		5DCFB1B92A274900007C2950 /* BusinessTrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFB1B82A274900007C2950 /* BusinessTrainingViewController.swift */; };
+		5DCFB1BB2A274B92007C2950 /* BusinessProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFB1BA2A274B92007C2950 /* BusinessProfileViewController.swift */; };
+		5DCFB1BD2A274D3A007C2950 /* BusinessEditVoucherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFB1BC2A274D3A007C2950 /* BusinessEditVoucherViewController.swift */; };
+		5DCFB1C02A27558A007C2950 /* SalesTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFB1BF2A27558A007C2950 /* SalesTabbarViewController.swift */; };
+		5DCFB1C22A2779BC007C2950 /* SalesDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFB1C12A2779BC007C2950 /* SalesDashboardViewController.swift */; };
+		5DCFB1C42A2779D7007C2950 /* SalesMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFB1C32A2779D7007C2950 /* SalesMemberViewController.swift */; };
+		5DCFB1C62A2779F3007C2950 /* SalesGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFB1C52A2779F3007C2950 /* SalesGoalsViewController.swift */; };
+		5DCFB1C82A277A0C007C2950 /* SalesTrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFB1C72A277A0C007C2950 /* SalesTrainingViewController.swift */; };
+		5DCFB1CA2A277A28007C2950 /* SalesProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFB1C92A277A28007C2950 /* SalesProfileViewController.swift */; };
+		5DD7CCD62A3583FD00626E51 /* BusinessSaleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD7CCD52A3583FD00626E51 /* BusinessSaleTableViewCell.swift */; };
+		5DD7CCD82A35855900626E51 /* AdminBusinessSalesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD7CCD72A35855900626E51 /* AdminBusinessSalesViewController.swift */; };
+		5DD7CCDA2A35864800626E51 /* BusinessTransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD7CCD92A35864800626E51 /* BusinessTransactionModel.swift */; };
+		5DD7CCDC2A35A21F00626E51 /* FundraiserSalesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD7CCDB2A35A21F00626E51 /* FundraiserSalesTableViewCell.swift */; };
+		5DD7CCDE2A35A28300626E51 /* AdminFundrasierSalesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD7CCDD2A35A28300626E51 /* AdminFundrasierSalesViewController.swift */; };
+		5DD7CCE02A35B2D600626E51 /* AdminPipelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD7CCDF2A35B2D600626E51 /* AdminPipelineViewController.swift */; };
+		5DD7CCE22A35B36C00626E51 /* AdminSalesMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD7CCE12A35B36C00626E51 /* AdminSalesMemberViewController.swift */; };
+		5DD7CCE42A35DC9200626E51 /* UserBusinessDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD7CCE32A35DC9200626E51 /* UserBusinessDetailsViewController.swift */; };
+		5DD7CCE62A35EDA200626E51 /* LocationFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD7CCE52A35EDA200626E51 /* LocationFilterViewController.swift */; };
+		5DDC3BD42A1772E2009FD775 /* AdminGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDC3BD32A1772E2009FD775 /* AdminGoalsViewController.swift */; };
+		5DDFD3FF2A181F8E00D1F115 /* FranchiseDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDFD3FE2A181F8E00D1F115 /* FranchiseDashboardViewController.swift */; };
+		5DDFD4012A1822F100D1F115 /* FranchiseAddB2BViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDFD4002A1822F100D1F115 /* FranchiseAddB2BViewController.swift */; };
+		5DDFD4032A1825B000D1F115 /* B2BModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDFD4022A1825B000D1F115 /* B2BModel.swift */; };
+		5DDFD4052A1848B400D1F115 /* FranchiseCopyEmailPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDFD4042A1848B400D1F115 /* FranchiseCopyEmailPasswordViewController.swift */; };
+		5DDFD4072A1849EC00D1F115 /* FranchiseB2BViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDFD4062A1849EC00D1F115 /* FranchiseB2BViewController.swift */; };
+		5DDFD4092A18514A00D1F115 /* B2bFundraiserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDFD4082A18514A00D1F115 /* B2bFundraiserTableViewCell.swift */; };
+		5DECBBE02A1B7931000532E9 /* PipelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DECBBDF2A1B7931000532E9 /* PipelineTableViewCell.swift */; };
+		5DECBBE22A1B7E11000532E9 /* FranchiseProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DECBBE12A1B7E11000532E9 /* FranchiseProfileViewController.swift */; };
+		5DECBBE42A1B9653000532E9 /* FranchiseGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DECBBE32A1B9653000532E9 /* FranchiseGoalsViewController.swift */; };
+		5DECBBE62A1B9663000532E9 /* FranchiseAddGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DECBBE52A1B9663000532E9 /* FranchiseAddGoalsViewController.swift */; };
+		5DEF66FB2A1F7802002851EA /* FranchiseViewPipelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEF66FA2A1F7802002851EA /* FranchiseViewPipelineViewController.swift */; };
+		5DEF66FD2A1F7976002851EA /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEF66FC2A1F7976002851EA /* NoteTableViewCell.swift */; };
+		5DEF66FF2A1F82A4002851EA /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEF66FE2A1F82A4002851EA /* NoteModel.swift */; };
+		5DFE0F3129FE017F00F5B937 /* FirebaseStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFE0F3029FE017F00F5B937 /* FirebaseStoreManager.swift */; };
+		5DFE0F3A29FE2D4800F5B937 /* GoPremiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFE0F3829FE2D4800F5B937 /* GoPremiumViewController.swift */; };
+		5DFE0F3B29FE2D4800F5B937 /* GoPremiumViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DFE0F3929FE2D4800F5B937 /* GoPremiumViewController.xib */; };
+		5DFEF79D29F9DE380041E0CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DFEF79A29F9DE1D0041E0CA /* Main.storyboard */; };
+		5DFEF7A129F9E4F80041E0CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFEF7A029F9E4F80041E0CA /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2BD0A5DBC56B091368C1A08F /* Pods-The Support Guide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Support Guide.release.xcconfig"; path = "Target Support Files/Pods-The Support Guide/Pods-The Support Guide.release.xcconfig"; sourceTree = "<group>"; };
+		5D032D1129F9A80F00770D0A /* CreateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileViewController.swift; sourceTree = "<group>"; };
+		5D1090BD2A29F72A00622600 /* BusinessReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessReportViewController.swift; sourceTree = "<group>"; };
+		5D1090BF2A2A189600622600 /* BusinessEditOwnerProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessEditOwnerProfileController.swift; sourceTree = "<group>"; };
+		5D1DC6B42A2F663000EE2D80 /* MembersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersTableViewCell.swift; sourceTree = "<group>"; };
+		5D210A172A1F8F12001DB338 /* FranchiseAddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranchiseAddNoteViewController.swift; sourceTree = "<group>"; };
+		5D32EC802A48A13300187310 /* FranchiseAddFollowUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranchiseAddFollowUpController.swift; sourceTree = "<group>"; };
+		5D32EC822A48D8A500187310 /* SalesAddGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesAddGoalViewController.swift; sourceTree = "<group>"; };
+		5D33887A2A20C57500C01F7D /* FranchiseEditBusinessController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranchiseEditBusinessController.swift; sourceTree = "<group>"; };
+		5D33887C2A20CCCF00C01F7D /* FranchiseEditFundraiserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranchiseEditFundraiserViewController.swift; sourceTree = "<group>"; };
+		5D33887E2A20D28000C01F7D /* FranchiseEditPipelineController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranchiseEditPipelineController.swift; sourceTree = "<group>"; };
+		5D3388812A20D8EF00C01F7D /* BusinessTabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessTabbarViewController.swift; sourceTree = "<group>"; };
+		5D3388832A20E0D300C01F7D /* BusinessDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDashboardViewController.swift; sourceTree = "<group>"; };
+		5D35217C2A3690A2005117CA /* UserViewVoucherController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewVoucherController.swift; sourceTree = "<group>"; };
+		5D35217E2A3722C1005117CA /* RedeemHistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemHistoryModel.swift; sourceTree = "<group>"; };
+		5D3521822A374506005117CA /* VoucherSuccessfulRedemeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoucherSuccessfulRedemeedViewController.swift; sourceTree = "<group>"; };
+		5D3521842A37462F005117CA /* redemeed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = redemeed.json; sourceTree = "<group>"; };
+		5D3521862A374973005117CA /* OfferRedeemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferRedeemTableViewCell.swift; sourceTree = "<group>"; };
+		5D35218D2A375C81005117CA /* The Support Guide.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "The Support Guide.entitlements"; sourceTree = "<group>"; };
+		5D3A4A102A158C4600E23AED /* AdminTrainingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminTrainingViewController.swift; sourceTree = "<group>"; };
+		5D3A4A122A158F4600E23AED /* CopyEmailPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyEmailPasswordViewController.swift; sourceTree = "<group>"; };
+		5D3A4A142A1592CB00E23AED /* TrainingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingTableView.swift; sourceTree = "<group>"; };
+		5D3A4A162A1593E300E23AED /* TrainingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingModel.swift; sourceTree = "<group>"; };
+		5D3A4A182A15A78A00E23AED /* AdminViewFranchiseProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewFranchiseProfileViewController.swift; sourceTree = "<group>"; };
+		5D3CA25E2A33C39700F730DE /* StoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreTableViewCell.swift; sourceTree = "<group>"; };
+		5D3CA2602A33C47800F730DE /* BusinessDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDetailsViewController.swift; sourceTree = "<group>"; };
+		5D3CA2622A33C8FC00F730DE /* StoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreModel.swift; sourceTree = "<group>"; };
+		5D3CA2642A33CCAF00F730DE /* BusinessAddStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessAddStoreViewController.swift; sourceTree = "<group>"; };
+		5D4DA5F82A2A20AC0017AD3E /* OwnerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerModel.swift; sourceTree = "<group>"; };
+		5D4FA80829FAF40600C0E1F2 /* SuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessViewController.swift; sourceTree = "<group>"; };
+		5D4FA80C29FAF80100C0E1F2 /* FundraiserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundraiserModel.swift; sourceTree = "<group>"; };
+		5D4FA80E29FB0DD100C0E1F2 /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
+		5D4FA81029FB0EA500C0E1F2 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
+		5D4FA81229FB0F8D00C0E1F2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		5D4FA81429FB0FB000C0E1F2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		5D4FA81629FB100600C0E1F2 /* FavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewController.swift; sourceTree = "<group>"; };
+		5D4FA81829FB101E00C0E1F2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		5D4FA81A29FB617400C0E1F2 /* BusinessTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessTableViewCell.swift; sourceTree = "<group>"; };
+		5D51BD272A24C578003EF23F /* VoucherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoucherTableViewCell.swift; sourceTree = "<group>"; };
+		5D51BD292A24C5F3003EF23F /* BusinessVoucherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessVoucherViewController.swift; sourceTree = "<group>"; };
+		5D5A983D29FC6C8000FDF133 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		5D5B66172A50F742007E0EFA /* LikeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeModel.swift; sourceTree = "<group>"; };
+		5D60BAE22A24CF680019E144 /* BusinessAddVoucherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessAddVoucherViewController.swift; sourceTree = "<group>"; };
+		5D60ED5B2A366BC500F2B93A /* GoogleReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleReviewModel.swift; sourceTree = "<group>"; };
+		5D60ED5D2A366F1E00F2B93A /* ViewOwnerProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewOwnerProfileViewController.swift; sourceTree = "<group>"; };
+		5D60ED5F2A3674B000F2B93A /* UserBusinessAllLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBusinessAllLocationViewController.swift; sourceTree = "<group>"; };
 		5D6AB19E29F8A2DC00E241AB /* The Support Guide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Support Guide.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D6AB1A129F8A2DC00E241AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5D6AB1A329F8A2DC00E241AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5D6AB1A529F8A2DC00E241AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5D6AB1A829F8A2DC00E241AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5D6AB1A529F8A2DC00E241AB /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		5D6AB1AA29F8A2DD00E241AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D6AB1AD29F8A2DD00E241AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		5D6AB1AF29F8A2DD00E241AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D6AB1AF29F8A2DD00E241AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = SupportedFiles/Info.plist; sourceTree = "<group>"; };
+		5D6AB1B629F8AE4D00E241AB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5D6AB1BC29F8AEFF00E241AB /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
+		5D6AB1BD29F8AF0000E241AB /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
+		5D6AB1BE29F8AF0100E241AB /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		5D6AB1BF29F8AF0200E241AB /* Poppins-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Black.ttf"; sourceTree = "<group>"; };
+		5D6AB1C029F8AF0300E241AB /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		5D6AB1C129F8AF0500E241AB /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		5D6AB1C229F8AF0600E241AB /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		5D6AB1CB29F8B0F200E241AB /* MyExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExtensions.swift; sourceTree = "<group>"; };
+		5D6AB1CD29F8B8A500E241AB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5D6AB1CF29F8B8D900E241AB /* GooglePlacesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesManager.swift; sourceTree = "<group>"; };
+		5D6AB1D129F8B8F000E241AB /* MyGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGesture.swift; sourceTree = "<group>"; };
+		5D6AB1D329F8B98F00E241AB /* EntryPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryPageViewController.swift; sourceTree = "<group>"; };
+		5D6AB1D629F8C1E100E241AB /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		5D6AB1D829F8EAAE00E241AB /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		5D6AB1DA29F8ED7300E241AB /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		5D6E610A2A03107400363488 /* premium.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = premium.json; sourceTree = "<group>"; };
+		5D6E610C2A03123700363488 /* GoPremiumPresentationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoPremiumPresentationViewController.swift; sourceTree = "<group>"; };
+		5D79BF3C2A255E3300D26EDE /* VoucherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoucherModel.swift; sourceTree = "<group>"; };
+		5D7FB2FB2A178CC900EE7274 /* GoalsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsTableViewCell.swift; sourceTree = "<group>"; };
+		5D7FB2FD2A17959000EE7274 /* AddGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalViewController.swift; sourceTree = "<group>"; };
+		5D7FB2FF2A1797B800EE7274 /* GoalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalModel.swift; sourceTree = "<group>"; };
+		5D7FB3012A17A9A800EE7274 /* FranchiseTabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranchiseTabbarViewController.swift; sourceTree = "<group>"; };
+		5D8357D52A324E7A00C3DF81 /* SalesAddMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesAddMemberViewController.swift; sourceTree = "<group>"; };
+		5D8357D92A32517D00C3DF81 /* SalesMemberModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesMemberModel.swift; sourceTree = "<group>"; };
+		5D8357DB2A3269A500C3DF81 /* SalesEditMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesEditMemberViewController.swift; sourceTree = "<group>"; };
+		5D8357DD2A327F1600C3DF81 /* FundraiserTransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundraiserTransactionModel.swift; sourceTree = "<group>"; };
+		5D8357DF2A3280D400C3DF81 /* SalesMemberTransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesMemberTransactionsViewController.swift; sourceTree = "<group>"; };
+		5D8357E12A3285B900C3DF81 /* MemberTransactionTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberTransactionTableCell.swift; sourceTree = "<group>"; };
+		5D84A7E62A199530005ADC4C /* FranchiseAddFundraiserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranchiseAddFundraiserViewController.swift; sourceTree = "<group>"; };
+		5D84A7E82A199554005ADC4C /* FranchiseFundraiserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranchiseFundraiserViewController.swift; sourceTree = "<group>"; };
+		5D84A7EA2A199583005ADC4C /* FranchiseCopyFundraiserIdPasswordViewControlelr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranchiseCopyFundraiserIdPasswordViewControlelr.swift; sourceTree = "<group>"; };
+		5D84A7EC2A199C17005ADC4C /* FranchisePipelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranchisePipelineViewController.swift; sourceTree = "<group>"; };
+		5D84A7EE2A199C3F005ADC4C /* FranchiseAddPipelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranchiseAddPipelineViewController.swift; sourceTree = "<group>"; };
+		5D84A7F02A199E24005ADC4C /* PipelineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipelineModel.swift; sourceTree = "<group>"; };
+		5D8938B62A33D22F007DA343 /* BusinessEditStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessEditStoreViewController.swift; sourceTree = "<group>"; };
+		5D8938B82A33EAC8007DA343 /* FranchiseB2BDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranchiseB2BDetailsViewController.swift; sourceTree = "<group>"; };
+		5D966EC32A13A35E00B5A4C1 /* EditFranchiseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFranchiseViewController.swift; sourceTree = "<group>"; };
+		5D966EC52A13AC2700B5A4C1 /* AdminProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminProfileViewController.swift; sourceTree = "<group>"; };
+		5D966EC92A13B13600B5A4C1 /* AddTrainingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTrainingViewController.swift; sourceTree = "<group>"; };
+		5D966ECB2A13B55700B5A4C1 /* Franchise.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Franchise.storyboard; sourceTree = "<group>"; };
+		5D9F109E2A09525600470D52 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		5D9F10A02A0953A900470D52 /* CategoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewCell.swift; sourceTree = "<group>"; };
+		5D9F10A22A09975900470D52 /* ShowAllBusinessesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAllBusinessesViewController.swift; sourceTree = "<group>"; };
+		5D9F10A42A09A07200470D52 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
+		5D9F10A62A09A09500470D52 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		5D9F10A82A09A0B700470D52 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		5D9F10AA2A09A27A00470D52 /* RedeemHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemHistoryViewController.swift; sourceTree = "<group>"; };
+		5D9F10AC2A09A4C600470D52 /* Admin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Admin.storyboard; sourceTree = "<group>"; };
+		5D9F10AF2A09A56E00470D52 /* AdminTabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminTabbarViewController.swift; sourceTree = "<group>"; };
+		5D9F10B12A09B2E400470D52 /* 142230-login.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "142230-login.json"; sourceTree = "<group>"; };
+		5D9F10B52A0E5E6100470D52 /* FranchiseViewTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranchiseViewTableView.swift; sourceTree = "<group>"; };
+		5D9F10B72A0E618B00470D52 /* AdminFranchisesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminFranchisesViewController.swift; sourceTree = "<group>"; };
+		5D9F10B92A0E639D00470D52 /* FranchiseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranchiseModel.swift; sourceTree = "<group>"; };
+		5D9F10BB2A0E697800470D52 /* AddFranchiseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFranchiseViewController.swift; sourceTree = "<group>"; };
+		5D9F11032A13611F00470D52 /* Google_Places_Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Google_Places_Cell.swift; sourceTree = "<group>"; };
+		5DA428412A1C9B6D009225A4 /* FranchiseTrainingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranchiseTrainingViewController.swift; sourceTree = "<group>"; };
+		5DA428432A1C9C3F009225A4 /* B2B.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = B2B.storyboard; sourceTree = "<group>"; };
+		5DA428452A1C9C4E009225A4 /* Sales.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sales.storyboard; sourceTree = "<group>"; };
+		5DA428472A1C9ED6009225A4 /* RecentlyAddedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentlyAddedModel.swift; sourceTree = "<group>"; };
+		5DCFB1B82A274900007C2950 /* BusinessTrainingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessTrainingViewController.swift; sourceTree = "<group>"; };
+		5DCFB1BA2A274B92007C2950 /* BusinessProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessProfileViewController.swift; sourceTree = "<group>"; };
+		5DCFB1BC2A274D3A007C2950 /* BusinessEditVoucherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessEditVoucherViewController.swift; sourceTree = "<group>"; };
+		5DCFB1BF2A27558A007C2950 /* SalesTabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesTabbarViewController.swift; sourceTree = "<group>"; };
+		5DCFB1C12A2779BC007C2950 /* SalesDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesDashboardViewController.swift; sourceTree = "<group>"; };
+		5DCFB1C32A2779D7007C2950 /* SalesMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesMemberViewController.swift; sourceTree = "<group>"; };
+		5DCFB1C52A2779F3007C2950 /* SalesGoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesGoalsViewController.swift; sourceTree = "<group>"; };
+		5DCFB1C72A277A0C007C2950 /* SalesTrainingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesTrainingViewController.swift; sourceTree = "<group>"; };
+		5DCFB1C92A277A28007C2950 /* SalesProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesProfileViewController.swift; sourceTree = "<group>"; };
+		5DD7CCD52A3583FD00626E51 /* BusinessSaleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSaleTableViewCell.swift; sourceTree = "<group>"; };
+		5DD7CCD72A35855900626E51 /* AdminBusinessSalesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminBusinessSalesViewController.swift; sourceTree = "<group>"; };
+		5DD7CCD92A35864800626E51 /* BusinessTransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessTransactionModel.swift; sourceTree = "<group>"; };
+		5DD7CCDB2A35A21F00626E51 /* FundraiserSalesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundraiserSalesTableViewCell.swift; sourceTree = "<group>"; };
+		5DD7CCDD2A35A28300626E51 /* AdminFundrasierSalesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminFundrasierSalesViewController.swift; sourceTree = "<group>"; };
+		5DD7CCDF2A35B2D600626E51 /* AdminPipelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminPipelineViewController.swift; sourceTree = "<group>"; };
+		5DD7CCE12A35B36C00626E51 /* AdminSalesMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSalesMemberViewController.swift; sourceTree = "<group>"; };
+		5DD7CCE32A35DC9200626E51 /* UserBusinessDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBusinessDetailsViewController.swift; sourceTree = "<group>"; };
+		5DD7CCE52A35EDA200626E51 /* LocationFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFilterViewController.swift; sourceTree = "<group>"; };
+		5DDC3BD32A1772E2009FD775 /* AdminGoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminGoalsViewController.swift; sourceTree = "<group>"; };
+		5DDFD3FE2A181F8E00D1F115 /* FranchiseDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranchiseDashboardViewController.swift; sourceTree = "<group>"; };
+		5DDFD4002A1822F100D1F115 /* FranchiseAddB2BViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranchiseAddB2BViewController.swift; sourceTree = "<group>"; };
+		5DDFD4022A1825B000D1F115 /* B2BModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = B2BModel.swift; sourceTree = "<group>"; };
+		5DDFD4042A1848B400D1F115 /* FranchiseCopyEmailPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranchiseCopyEmailPasswordViewController.swift; sourceTree = "<group>"; };
+		5DDFD4062A1849EC00D1F115 /* FranchiseB2BViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranchiseB2BViewController.swift; sourceTree = "<group>"; };
+		5DDFD4082A18514A00D1F115 /* B2bFundraiserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = B2bFundraiserTableViewCell.swift; sourceTree = "<group>"; };
+		5DECBBDF2A1B7931000532E9 /* PipelineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipelineTableViewCell.swift; sourceTree = "<group>"; };
+		5DECBBE12A1B7E11000532E9 /* FranchiseProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranchiseProfileViewController.swift; sourceTree = "<group>"; };
+		5DECBBE32A1B9653000532E9 /* FranchiseGoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranchiseGoalsViewController.swift; sourceTree = "<group>"; };
+		5DECBBE52A1B9663000532E9 /* FranchiseAddGoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranchiseAddGoalsViewController.swift; sourceTree = "<group>"; };
+		5DEF66FA2A1F7802002851EA /* FranchiseViewPipelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranchiseViewPipelineViewController.swift; sourceTree = "<group>"; };
+		5DEF66FC2A1F7976002851EA /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
+		5DEF66FE2A1F82A4002851EA /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
+		5DFE0F3029FE017F00F5B937 /* FirebaseStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStoreManager.swift; sourceTree = "<group>"; };
+		5DFE0F3829FE2D4800F5B937 /* GoPremiumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoPremiumViewController.swift; sourceTree = "<group>"; };
+		5DFE0F3929FE2D4800F5B937 /* GoPremiumViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoPremiumViewController.xib; sourceTree = "<group>"; };
+		5DFEF79B29F9DE1D0041E0CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5DFEF7A029F9E4F80041E0CA /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		AA5E5A1A739B51FDF9FE675B /* Pods_The_Support_Guide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_The_Support_Guide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB045D68724E8F5B67575BFC /* Pods-The Support Guide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Support Guide.debug.xcconfig"; path = "Target Support Files/Pods-The Support Guide/Pods-The Support Guide.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +314,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				222CD4B53E499C65C4504A86 /* Pods_The_Support_Guide.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D3388802A20D8D600C01F7D /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				5D3388812A20D8EF00C01F7D /* BusinessTabbarViewController.swift */,
+				5D3388832A20E0D300C01F7D /* BusinessDashboardViewController.swift */,
+				5D51BD292A24C5F3003EF23F /* BusinessVoucherViewController.swift */,
+				5D60BAE22A24CF680019E144 /* BusinessAddVoucherViewController.swift */,
+				5DCFB1BC2A274D3A007C2950 /* BusinessEditVoucherViewController.swift */,
+				5D1090BD2A29F72A00622600 /* BusinessReportViewController.swift */,
+				5DCFB1B82A274900007C2950 /* BusinessTrainingViewController.swift */,
+				5DCFB1BA2A274B92007C2950 /* BusinessProfileViewController.swift */,
+				5D1090BF2A2A189600622600 /* BusinessEditOwnerProfileController.swift */,
+				5D3CA2602A33C47800F730DE /* BusinessDetailsViewController.swift */,
+				5D3CA2642A33CCAF00F730DE /* BusinessAddStoreViewController.swift */,
+				5D8938B62A33D22F007DA343 /* BusinessEditStoreViewController.swift */,
+			);
+			path = Business;
+			sourceTree = "<group>";
+		};
 		5D6AB19529F8A2DC00E241AB = {
 			isa = PBXGroup;
 			children = (
 				5D6AB1A029F8A2DC00E241AB /* The Support Guide */,
 				5D6AB19F29F8A2DC00E241AB /* Products */,
+				FEE0477509E0C9EC8CF361B1 /* Pods */,
+				ADD6A65D2D4490E20B6A6D40 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +361,225 @@
 		5D6AB1A029F8A2DC00E241AB /* The Support Guide */ = {
 			isa = PBXGroup;
 			children = (
+				5D35218D2A375C81005117CA /* The Support Guide.entitlements */,
+				5D6AB1BB29F8AEF000E241AB /* Font */,
+				5D6AB1D529F8C1B600E241AB /* Model */,
+				5D6AB1CA29F8AF1600E241AB /* Util */,
+				5D6AB1B929F8AE8F00E241AB /* View */,
+				5D6AB1B829F8AE8500E241AB /* ViewController */,
 				5D6AB1A129F8A2DC00E241AB /* AppDelegate.swift */,
-				5D6AB1A329F8A2DC00E241AB /* SceneDelegate.swift */,
-				5D6AB1A529F8A2DC00E241AB /* ViewController.swift */,
-				5D6AB1A729F8A2DC00E241AB /* Main.storyboard */,
-				5D6AB1AA29F8A2DD00E241AB /* Assets.xcassets */,
-				5D6AB1AC29F8A2DD00E241AB /* LaunchScreen.storyboard */,
+				5DFEF7A029F9E4F80041E0CA /* SceneDelegate.swift */,
+				5D6AB1B629F8AE4D00E241AB /* GoogleService-Info.plist */,
+				5D9F10B12A09B2E400470D52 /* 142230-login.json */,
 				5D6AB1AF29F8A2DD00E241AB /* Info.plist */,
+				5D6E610A2A03107400363488 /* premium.json */,
+				5D3521842A37462F005117CA /* redemeed.json */,
+				5D4FA80E29FB0DD100C0E1F2 /* success.json */,
 			);
 			path = "The Support Guide";
+			sourceTree = "<group>";
+		};
+		5D6AB1B829F8AE8500E241AB /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5DCFB1BE2A27556F007C2950 /* Sales */,
+				5D3388802A20D8D600C01F7D /* Business */,
+				5D966ECD2A13B57500B5A4C1 /* Franchise */,
+				5D9F10AE2A09A55D00470D52 /* Admin */,
+				5D6AB1A529F8A2DC00E241AB /* WelcomeViewController.swift */,
+				5D6AB1D329F8B98F00E241AB /* EntryPageViewController.swift */,
+				5D6AB1D829F8EAAE00E241AB /* SignInViewController.swift */,
+				5D6AB1DA29F8ED7300E241AB /* RegisterViewController.swift */,
+				5D032D1129F9A80F00770D0A /* CreateProfileViewController.swift */,
+				5D4FA80829FAF40600C0E1F2 /* SuccessViewController.swift */,
+				5D4FA81029FB0EA500C0E1F2 /* TabbarViewController.swift */,
+				5D4FA81229FB0F8D00C0E1F2 /* HomeViewController.swift */,
+				5D9F10A22A09975900470D52 /* ShowAllBusinessesViewController.swift */,
+				5D4FA81429FB0FB000C0E1F2 /* MapViewController.swift */,
+				5D4FA81629FB100600C0E1F2 /* FavouriteViewController.swift */,
+				5D4FA81829FB101E00C0E1F2 /* ProfileViewController.swift */,
+				5D6E610C2A03123700363488 /* GoPremiumPresentationViewController.swift */,
+				5D9F109E2A09525600470D52 /* CategoriesViewController.swift */,
+				5D9F10A82A09A0B700470D52 /* NotificationViewController.swift */,
+				5D9F10AA2A09A27A00470D52 /* RedeemHistoryViewController.swift */,
+				5DD7CCE32A35DC9200626E51 /* UserBusinessDetailsViewController.swift */,
+				5DD7CCE52A35EDA200626E51 /* LocationFilterViewController.swift */,
+				5D60ED5D2A366F1E00F2B93A /* ViewOwnerProfileViewController.swift */,
+				5D60ED5F2A3674B000F2B93A /* UserBusinessAllLocationViewController.swift */,
+				5D35217C2A3690A2005117CA /* UserViewVoucherController.swift */,
+				5D3521822A374506005117CA /* VoucherSuccessfulRedemeedViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		5D6AB1B929F8AE8F00E241AB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5D6AB1AC29F8A2DD00E241AB /* LaunchScreen.storyboard */,
+				5DFEF79A29F9DE1D0041E0CA /* Main.storyboard */,
+				5D9F10AC2A09A4C600470D52 /* Admin.storyboard */,
+				5D966ECB2A13B55700B5A4C1 /* Franchise.storyboard */,
+				5DA428432A1C9C3F009225A4 /* B2B.storyboard */,
+				5DA428452A1C9C4E009225A4 /* Sales.storyboard */,
+				5DFE0F3929FE2D4800F5B937 /* GoPremiumViewController.xib */,
+				5D6AB1AA29F8A2DD00E241AB /* Assets.xcassets */,
+				5D4FA81A29FB617400C0E1F2 /* BusinessTableViewCell.swift */,
+				5DFE0F3829FE2D4800F5B937 /* GoPremiumViewController.swift */,
+				5D9F10A02A0953A900470D52 /* CategoriesTableViewCell.swift */,
+				5D9F10A62A09A09500470D52 /* NotificationTableViewCell.swift */,
+				5D9F10B52A0E5E6100470D52 /* FranchiseViewTableView.swift */,
+				5D9F11032A13611F00470D52 /* Google_Places_Cell.swift */,
+				5D3A4A142A1592CB00E23AED /* TrainingTableView.swift */,
+				5D7FB2FB2A178CC900EE7274 /* GoalsTableViewCell.swift */,
+				5DDFD4082A18514A00D1F115 /* B2bFundraiserTableViewCell.swift */,
+				5DECBBDF2A1B7931000532E9 /* PipelineTableViewCell.swift */,
+				5DEF66FC2A1F7976002851EA /* NoteTableViewCell.swift */,
+				5D51BD272A24C578003EF23F /* VoucherTableViewCell.swift */,
+				5D1DC6B42A2F663000EE2D80 /* MembersTableViewCell.swift */,
+				5D8357E12A3285B900C3DF81 /* MemberTransactionTableCell.swift */,
+				5D3CA25E2A33C39700F730DE /* StoreTableViewCell.swift */,
+				5DD7CCD52A3583FD00626E51 /* BusinessSaleTableViewCell.swift */,
+				5DD7CCDB2A35A21F00626E51 /* FundraiserSalesTableViewCell.swift */,
+				5D3521862A374973005117CA /* OfferRedeemTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5D6AB1BB29F8AEF000E241AB /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				5D6AB1BF29F8AF0200E241AB /* Poppins-Black.ttf */,
+				5D6AB1BE29F8AF0100E241AB /* Poppins-Bold.ttf */,
+				5D6AB1BC29F8AEFF00E241AB /* Poppins-ExtraBold.ttf */,
+				5D6AB1BD29F8AF0000E241AB /* Poppins-Light.ttf */,
+				5D6AB1C029F8AF0300E241AB /* Poppins-Medium.ttf */,
+				5D6AB1C129F8AF0500E241AB /* Poppins-Regular.ttf */,
+				5D6AB1C229F8AF0600E241AB /* Poppins-SemiBold.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		5D6AB1CA29F8AF1600E241AB /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				5D6AB1CB29F8B0F200E241AB /* MyExtensions.swift */,
+				5D6AB1CD29F8B8A500E241AB /* Constants.swift */,
+				5D6AB1CF29F8B8D900E241AB /* GooglePlacesManager.swift */,
+				5D6AB1D129F8B8F000E241AB /* MyGesture.swift */,
+				5DFE0F3029FE017F00F5B937 /* FirebaseStoreManager.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		5D6AB1D529F8C1B600E241AB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5D6AB1D629F8C1E100E241AB /* UserModel.swift */,
+				5D5A983D29FC6C8000FDF133 /* CategoryModel.swift */,
+				5D9F10A42A09A07200470D52 /* NotificationModel.swift */,
+				5D9F10B92A0E639D00470D52 /* FranchiseModel.swift */,
+				5D3A4A162A1593E300E23AED /* TrainingModel.swift */,
+				5D7FB2FF2A1797B800EE7274 /* GoalModel.swift */,
+				5DDFD4022A1825B000D1F115 /* B2BModel.swift */,
+				5D4FA80C29FAF80100C0E1F2 /* FundraiserModel.swift */,
+				5D84A7F02A199E24005ADC4C /* PipelineModel.swift */,
+				5DA428472A1C9ED6009225A4 /* RecentlyAddedModel.swift */,
+				5DEF66FE2A1F82A4002851EA /* NoteModel.swift */,
+				5D79BF3C2A255E3300D26EDE /* VoucherModel.swift */,
+				5D4DA5F82A2A20AC0017AD3E /* OwnerModel.swift */,
+				5D8357D92A32517D00C3DF81 /* SalesMemberModel.swift */,
+				5D8357DD2A327F1600C3DF81 /* FundraiserTransactionModel.swift */,
+				5D3CA2622A33C8FC00F730DE /* StoreModel.swift */,
+				5DD7CCD92A35864800626E51 /* BusinessTransactionModel.swift */,
+				5D60ED5B2A366BC500F2B93A /* GoogleReviewModel.swift */,
+				5D35217E2A3722C1005117CA /* RedeemHistoryModel.swift */,
+				5D5B66172A50F742007E0EFA /* LikeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5D966ECD2A13B57500B5A4C1 /* Franchise */ = {
+			isa = PBXGroup;
+			children = (
+				5D7FB3012A17A9A800EE7274 /* FranchiseTabbarViewController.swift */,
+				5DDFD3FE2A181F8E00D1F115 /* FranchiseDashboardViewController.swift */,
+				5DDFD4062A1849EC00D1F115 /* FranchiseB2BViewController.swift */,
+				5DDFD4002A1822F100D1F115 /* FranchiseAddB2BViewController.swift */,
+				5D33887A2A20C57500C01F7D /* FranchiseEditBusinessController.swift */,
+				5DDFD4042A1848B400D1F115 /* FranchiseCopyEmailPasswordViewController.swift */,
+				5D84A7E82A199554005ADC4C /* FranchiseFundraiserViewController.swift */,
+				5D84A7E62A199530005ADC4C /* FranchiseAddFundraiserViewController.swift */,
+				5D33887C2A20CCCF00C01F7D /* FranchiseEditFundraiserViewController.swift */,
+				5D84A7EA2A199583005ADC4C /* FranchiseCopyFundraiserIdPasswordViewControlelr.swift */,
+				5D84A7EC2A199C17005ADC4C /* FranchisePipelineViewController.swift */,
+				5D32EC802A48A13300187310 /* FranchiseAddFollowUpController.swift */,
+				5D84A7EE2A199C3F005ADC4C /* FranchiseAddPipelineViewController.swift */,
+				5DEF66FA2A1F7802002851EA /* FranchiseViewPipelineViewController.swift */,
+				5D33887E2A20D28000C01F7D /* FranchiseEditPipelineController.swift */,
+				5D210A172A1F8F12001DB338 /* FranchiseAddNoteViewController.swift */,
+				5DECBBE12A1B7E11000532E9 /* FranchiseProfileViewController.swift */,
+				5DECBBE32A1B9653000532E9 /* FranchiseGoalsViewController.swift */,
+				5DECBBE52A1B9663000532E9 /* FranchiseAddGoalsViewController.swift */,
+				5DA428412A1C9B6D009225A4 /* FranchiseTrainingViewController.swift */,
+				5D8938B82A33EAC8007DA343 /* FranchiseB2BDetailsViewController.swift */,
+			);
+			path = Franchise;
+			sourceTree = "<group>";
+		};
+		5D9F10AE2A09A55D00470D52 /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				5D9F10AF2A09A56E00470D52 /* AdminTabbarViewController.swift */,
+				5D9F10B72A0E618B00470D52 /* AdminFranchisesViewController.swift */,
+				5D9F10BB2A0E697800470D52 /* AddFranchiseViewController.swift */,
+				5D966EC32A13A35E00B5A4C1 /* EditFranchiseViewController.swift */,
+				5D966EC52A13AC2700B5A4C1 /* AdminProfileViewController.swift */,
+				5D3A4A102A158C4600E23AED /* AdminTrainingViewController.swift */,
+				5D966EC92A13B13600B5A4C1 /* AddTrainingViewController.swift */,
+				5D3A4A122A158F4600E23AED /* CopyEmailPasswordViewController.swift */,
+				5D3A4A182A15A78A00E23AED /* AdminViewFranchiseProfileViewController.swift */,
+				5DDC3BD32A1772E2009FD775 /* AdminGoalsViewController.swift */,
+				5D7FB2FD2A17959000EE7274 /* AddGoalViewController.swift */,
+				5DD7CCD72A35855900626E51 /* AdminBusinessSalesViewController.swift */,
+				5DD7CCDD2A35A28300626E51 /* AdminFundrasierSalesViewController.swift */,
+				5DD7CCE12A35B36C00626E51 /* AdminSalesMemberViewController.swift */,
+				5DD7CCDF2A35B2D600626E51 /* AdminPipelineViewController.swift */,
+			);
+			path = Admin;
+			sourceTree = "<group>";
+		};
+		5DCFB1BE2A27556F007C2950 /* Sales */ = {
+			isa = PBXGroup;
+			children = (
+				5DCFB1BF2A27558A007C2950 /* SalesTabbarViewController.swift */,
+				5DCFB1C12A2779BC007C2950 /* SalesDashboardViewController.swift */,
+				5DCFB1C32A2779D7007C2950 /* SalesMemberViewController.swift */,
+				5DCFB1C52A2779F3007C2950 /* SalesGoalsViewController.swift */,
+				5D32EC822A48D8A500187310 /* SalesAddGoalViewController.swift */,
+				5DCFB1C72A277A0C007C2950 /* SalesTrainingViewController.swift */,
+				5DCFB1C92A277A28007C2950 /* SalesProfileViewController.swift */,
+				5D8357D52A324E7A00C3DF81 /* SalesAddMemberViewController.swift */,
+				5D8357DB2A3269A500C3DF81 /* SalesEditMemberViewController.swift */,
+				5D8357DF2A3280D400C3DF81 /* SalesMemberTransactionsViewController.swift */,
+			);
+			path = Sales;
+			sourceTree = "<group>";
+		};
+		ADD6A65D2D4490E20B6A6D40 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA5E5A1A739B51FDF9FE675B /* Pods_The_Support_Guide.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FEE0477509E0C9EC8CF361B1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CB045D68724E8F5B67575BFC /* Pods-The Support Guide.debug.xcconfig */,
+				2BD0A5DBC56B091368C1A08F /* Pods-The Support Guide.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +589,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5D6AB1B229F8A2DD00E241AB /* Build configuration list for PBXNativeTarget "The Support Guide" */;
 			buildPhases = (
+				287732090BBAE51A570F8110 /* [CP] Check Pods Manifest.lock */,
 				5D6AB19A29F8A2DC00E241AB /* Sources */,
 				5D6AB19B29F8A2DC00E241AB /* Frameworks */,
 				5D6AB19C29F8A2DC00E241AB /* Resources */,
+				384FD657CB31261161624731 /* [CP] Embed Pods Frameworks */,
+				27CEF1DF6C03C67ACA8FB9F2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -103,7 +621,7 @@
 				};
 			};
 			buildConfigurationList = 5D6AB19929F8A2DC00E241AB /* Build configuration list for PBXProject "The Support Guide" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -125,42 +643,240 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DA428462A1C9C4E009225A4 /* Sales.storyboard in Resources */,
+				5D6AB1C629F8AF0600E241AB /* Poppins-Black.ttf in Resources */,
+				5D9F10AD2A09A4C600470D52 /* Admin.storyboard in Resources */,
 				5D6AB1AE29F8A2DD00E241AB /* LaunchScreen.storyboard in Resources */,
+				5D6AB1C929F8AF0600E241AB /* Poppins-SemiBold.ttf in Resources */,
+				5D6AB1C429F8AF0600E241AB /* Poppins-Light.ttf in Resources */,
+				5D6AB1C529F8AF0600E241AB /* Poppins-Bold.ttf in Resources */,
+				5D3521852A37462F005117CA /* redemeed.json in Resources */,
+				5D4FA80F29FB0DD100C0E1F2 /* success.json in Resources */,
+				5DFEF79D29F9DE380041E0CA /* Main.storyboard in Resources */,
+				5D6AB1C329F8AF0600E241AB /* Poppins-ExtraBold.ttf in Resources */,
 				5D6AB1AB29F8A2DD00E241AB /* Assets.xcassets in Resources */,
-				5D6AB1A929F8A2DC00E241AB /* Main.storyboard in Resources */,
+				5DFE0F3B29FE2D4800F5B937 /* GoPremiumViewController.xib in Resources */,
+				5D9F10B22A09B2E400470D52 /* 142230-login.json in Resources */,
+				5D6AB1C729F8AF0600E241AB /* Poppins-Medium.ttf in Resources */,
+				5D966ECC2A13B55700B5A4C1 /* Franchise.storyboard in Resources */,
+				5D6AB1B729F8AE4D00E241AB /* GoogleService-Info.plist in Resources */,
+				5D6AB1C829F8AF0600E241AB /* Poppins-Regular.ttf in Resources */,
+				5D6E610B2A03107400363488 /* premium.json in Resources */,
+				5DA428442A1C9C3F009225A4 /* B2B.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		27CEF1DF6C03C67ACA8FB9F2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-The Support Guide/Pods-The Support Guide-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-The Support Guide/Pods-The Support Guide-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-The Support Guide/Pods-The Support Guide-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		287732090BBAE51A570F8110 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-The Support Guide-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		384FD657CB31261161624731 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-The Support Guide/Pods-The Support Guide-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-The Support Guide/Pods-The Support Guide-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-The Support Guide/Pods-The Support Guide-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5D6AB19A29F8A2DC00E241AB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D6AB1A629F8A2DC00E241AB /* ViewController.swift in Sources */,
+				5D8357E22A3285B900C3DF81 /* MemberTransactionTableCell.swift in Sources */,
+				5D7FB2FE2A17959000EE7274 /* AddGoalViewController.swift in Sources */,
+				5DEF66FF2A1F82A4002851EA /* NoteModel.swift in Sources */,
+				5DCFB1BB2A274B92007C2950 /* BusinessProfileViewController.swift in Sources */,
+				5DECBBE62A1B9663000532E9 /* FranchiseAddGoalsViewController.swift in Sources */,
+				5D4FA81129FB0EA500C0E1F2 /* TabbarViewController.swift in Sources */,
+				5D6AB1D029F8B8D900E241AB /* GooglePlacesManager.swift in Sources */,
+				5D9F10BC2A0E697800470D52 /* AddFranchiseViewController.swift in Sources */,
+				5D3A4A172A1593E300E23AED /* TrainingModel.swift in Sources */,
+				5DA428422A1C9B6D009225A4 /* FranchiseTrainingViewController.swift in Sources */,
+				5D9F10A12A0953A900470D52 /* CategoriesTableViewCell.swift in Sources */,
+				5D84A7F12A199E24005ADC4C /* PipelineModel.swift in Sources */,
+				5D4DA5F92A2A20AC0017AD3E /* OwnerModel.swift in Sources */,
+				5D1090C02A2A189600622600 /* BusinessEditOwnerProfileController.swift in Sources */,
+				5D9F11042A13611F00470D52 /* Google_Places_Cell.swift in Sources */,
+				5D9F10BA2A0E639D00470D52 /* FranchiseModel.swift in Sources */,
+				5D3521832A374506005117CA /* VoucherSuccessfulRedemeedViewController.swift in Sources */,
+				5DCFB1CA2A277A28007C2950 /* SalesProfileViewController.swift in Sources */,
+				5D4FA81929FB101E00C0E1F2 /* ProfileViewController.swift in Sources */,
+				5D6AB1DB29F8ED7300E241AB /* RegisterViewController.swift in Sources */,
+				5D9F10B02A09A56E00470D52 /* AdminTabbarViewController.swift in Sources */,
+				5D3388842A20E0D300C01F7D /* BusinessDashboardViewController.swift in Sources */,
+				5DCFB1C82A277A0C007C2950 /* SalesTrainingViewController.swift in Sources */,
+				5D32EC812A48A13300187310 /* FranchiseAddFollowUpController.swift in Sources */,
+				5DCFB1BD2A274D3A007C2950 /* BusinessEditVoucherViewController.swift in Sources */,
+				5DDFD4052A1848B400D1F115 /* FranchiseCopyEmailPasswordViewController.swift in Sources */,
+				5D84A7ED2A199C17005ADC4C /* FranchisePipelineViewController.swift in Sources */,
+				5D5B66182A50F742007E0EFA /* LikeModel.swift in Sources */,
+				5D3CA2612A33C47800F730DE /* BusinessDetailsViewController.swift in Sources */,
+				5D60ED5C2A366BC500F2B93A /* GoogleReviewModel.swift in Sources */,
+				5D3A4A132A158F4600E23AED /* CopyEmailPasswordViewController.swift in Sources */,
+				5DD7CCE62A35EDA200626E51 /* LocationFilterViewController.swift in Sources */,
+				5D4FA81329FB0F8D00C0E1F2 /* HomeViewController.swift in Sources */,
+				5D7FB2FC2A178CC900EE7274 /* GoalsTableViewCell.swift in Sources */,
+				5D1DC6B52A2F663000EE2D80 /* MembersTableViewCell.swift in Sources */,
+				5D9F10A72A09A09500470D52 /* NotificationTableViewCell.swift in Sources */,
+				5DDFD3FF2A181F8E00D1F115 /* FranchiseDashboardViewController.swift in Sources */,
+				5DDFD4032A1825B000D1F115 /* B2BModel.swift in Sources */,
+				5D60ED5E2A366F1E00F2B93A /* ViewOwnerProfileViewController.swift in Sources */,
+				5DA428482A1C9ED6009225A4 /* RecentlyAddedModel.swift in Sources */,
+				5DFE0F3129FE017F00F5B937 /* FirebaseStoreManager.swift in Sources */,
+				5D6AB1CE29F8B8A500E241AB /* Constants.swift in Sources */,
+				5D4FA80D29FAF80100C0E1F2 /* FundraiserModel.swift in Sources */,
+				5D5A983E29FC6C8000FDF133 /* CategoryModel.swift in Sources */,
+				5DD7CCDE2A35A28300626E51 /* AdminFundrasierSalesViewController.swift in Sources */,
+				5DDFD4092A18514A00D1F115 /* B2bFundraiserTableViewCell.swift in Sources */,
+				5D9F10B62A0E5E6100470D52 /* FranchiseViewTableView.swift in Sources */,
+				5D6AB1D229F8B8F000E241AB /* MyGesture.swift in Sources */,
+				5D79BF3D2A255E3300D26EDE /* VoucherModel.swift in Sources */,
+				5D3CA2652A33CCAF00F730DE /* BusinessAddStoreViewController.swift in Sources */,
+				5D4FA81B29FB617400C0E1F2 /* BusinessTableViewCell.swift in Sources */,
+				5D8357DC2A3269A500C3DF81 /* SalesEditMemberViewController.swift in Sources */,
+				5D7FB3022A17A9A800EE7274 /* FranchiseTabbarViewController.swift in Sources */,
+				5D51BD282A24C578003EF23F /* VoucherTableViewCell.swift in Sources */,
+				5D84A7E72A199530005ADC4C /* FranchiseAddFundraiserViewController.swift in Sources */,
+				5D84A7E92A199554005ADC4C /* FranchiseFundraiserViewController.swift in Sources */,
+				5D032D1229F9A80F00770D0A /* CreateProfileViewController.swift in Sources */,
+				5D9F10A32A09975900470D52 /* ShowAllBusinessesViewController.swift in Sources */,
+				5D9F109F2A09525600470D52 /* CategoriesViewController.swift in Sources */,
+				5D84A7EB2A199583005ADC4C /* FranchiseCopyFundraiserIdPasswordViewControlelr.swift in Sources */,
+				5D9F10A92A09A0B700470D52 /* NotificationViewController.swift in Sources */,
+				5D8938B72A33D22F007DA343 /* BusinessEditStoreViewController.swift in Sources */,
+				5D210A182A1F8F12001DB338 /* FranchiseAddNoteViewController.swift in Sources */,
+				5D9F10A52A09A07200470D52 /* NotificationModel.swift in Sources */,
+				5DCFB1C02A27558A007C2950 /* SalesTabbarViewController.swift in Sources */,
+				5DD7CCD62A3583FD00626E51 /* BusinessSaleTableViewCell.swift in Sources */,
+				5D3A4A152A1592CB00E23AED /* TrainingTableView.swift in Sources */,
+				5D3CA2632A33C8FC00F730DE /* StoreModel.swift in Sources */,
+				5DCFB1C42A2779D7007C2950 /* SalesMemberViewController.swift in Sources */,
+				5D51BD2A2A24C5F3003EF23F /* BusinessVoucherViewController.swift in Sources */,
+				5DCFB1C62A2779F3007C2950 /* SalesGoalsViewController.swift in Sources */,
+				5D8357E02A3280D400C3DF81 /* SalesMemberTransactionsViewController.swift in Sources */,
+				5D6AB1A629F8A2DC00E241AB /* WelcomeViewController.swift in Sources */,
+				5D966EC62A13AC2700B5A4C1 /* AdminProfileViewController.swift in Sources */,
+				5D35217F2A3722C1005117CA /* RedeemHistoryModel.swift in Sources */,
+				5DD7CCDC2A35A21F00626E51 /* FundraiserSalesTableViewCell.swift in Sources */,
+				5D33887B2A20C57500C01F7D /* FranchiseEditBusinessController.swift in Sources */,
+				5DEF66FB2A1F7802002851EA /* FranchiseViewPipelineViewController.swift in Sources */,
 				5D6AB1A229F8A2DC00E241AB /* AppDelegate.swift in Sources */,
-				5D6AB1A429F8A2DC00E241AB /* SceneDelegate.swift in Sources */,
+				5D3A4A112A158C4600E23AED /* AdminTrainingViewController.swift in Sources */,
+				5D6AB1D429F8B98F00E241AB /* EntryPageViewController.swift in Sources */,
+				5D8938B92A33EAC8007DA343 /* FranchiseB2BDetailsViewController.swift in Sources */,
+				5DD7CCD82A35855900626E51 /* AdminBusinessSalesViewController.swift in Sources */,
+				5D6AB1D729F8C1E100E241AB /* UserModel.swift in Sources */,
+				5DDFD4072A1849EC00D1F115 /* FranchiseB2BViewController.swift in Sources */,
+				5D3521872A374973005117CA /* OfferRedeemTableViewCell.swift in Sources */,
+				5D3388822A20D8EF00C01F7D /* BusinessTabbarViewController.swift in Sources */,
+				5D84A7EF2A199C40005ADC4C /* FranchiseAddPipelineViewController.swift in Sources */,
+				5D7FB3002A1797B800EE7274 /* GoalModel.swift in Sources */,
+				5D35217D2A3690A2005117CA /* UserViewVoucherController.swift in Sources */,
+				5DECBBE42A1B9653000532E9 /* FranchiseGoalsViewController.swift in Sources */,
+				5D60BAE32A24CF680019E144 /* BusinessAddVoucherViewController.swift in Sources */,
+				5D8357DA2A32517D00C3DF81 /* SalesMemberModel.swift in Sources */,
+				5D3CA25F2A33C39700F730DE /* StoreTableViewCell.swift in Sources */,
+				5DD7CCE22A35B36C00626E51 /* AdminSalesMemberViewController.swift in Sources */,
+				5DECBBE02A1B7931000532E9 /* PipelineTableViewCell.swift in Sources */,
+				5DECBBE22A1B7E11000532E9 /* FranchiseProfileViewController.swift in Sources */,
+				5D8357D62A324E7A00C3DF81 /* SalesAddMemberViewController.swift in Sources */,
+				5DDFD4012A1822F100D1F115 /* FranchiseAddB2BViewController.swift in Sources */,
+				5DCFB1B92A274900007C2950 /* BusinessTrainingViewController.swift in Sources */,
+				5DD7CCDA2A35864800626E51 /* BusinessTransactionModel.swift in Sources */,
+				5D6E610D2A03123700363488 /* GoPremiumPresentationViewController.swift in Sources */,
+				5DEF66FD2A1F7976002851EA /* NoteTableViewCell.swift in Sources */,
+				5D6AB1D929F8EAAE00E241AB /* SignInViewController.swift in Sources */,
+				5DDC3BD42A1772E2009FD775 /* AdminGoalsViewController.swift in Sources */,
+				5D8357DE2A327F1600C3DF81 /* FundraiserTransactionModel.swift in Sources */,
+				5DD7CCE42A35DC9200626E51 /* UserBusinessDetailsViewController.swift in Sources */,
+				5D3A4A192A15A78A00E23AED /* AdminViewFranchiseProfileViewController.swift in Sources */,
+				5D9F10B82A0E618B00470D52 /* AdminFranchisesViewController.swift in Sources */,
+				5DD7CCE02A35B2D600626E51 /* AdminPipelineViewController.swift in Sources */,
+				5D4FA81529FB0FB000C0E1F2 /* MapViewController.swift in Sources */,
+				5D33887D2A20CCCF00C01F7D /* FranchiseEditFundraiserViewController.swift in Sources */,
+				5D6AB1CC29F8B0F200E241AB /* MyExtensions.swift in Sources */,
+				5D32EC832A48D8A500187310 /* SalesAddGoalViewController.swift in Sources */,
+				5DCFB1C22A2779BC007C2950 /* SalesDashboardViewController.swift in Sources */,
+				5D4FA81729FB100600C0E1F2 /* FavouriteViewController.swift in Sources */,
+				5DFE0F3A29FE2D4800F5B937 /* GoPremiumViewController.swift in Sources */,
+				5D60ED602A3674B000F2B93A /* UserBusinessAllLocationViewController.swift in Sources */,
+				5D1090BE2A29F72A00622600 /* BusinessReportViewController.swift in Sources */,
+				5D966EC42A13A35E00B5A4C1 /* EditFranchiseViewController.swift in Sources */,
+				5D9F10AB2A09A27A00470D52 /* RedeemHistoryViewController.swift in Sources */,
+				5D33887F2A20D28000C01F7D /* FranchiseEditPipelineController.swift in Sources */,
+				5DFEF7A129F9E4F80041E0CA /* SceneDelegate.swift in Sources */,
+				5D966ECA2A13B13600B5A4C1 /* AddTrainingViewController.swift in Sources */,
+				5D4FA80929FAF40600C0E1F2 /* SuccessViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5D6AB1A729F8A2DC00E241AB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5D6AB1A829F8A2DC00E241AB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5D6AB1AC29F8A2DD00E241AB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				5D6AB1AD29F8A2DD00E241AB /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		5DFEF79A29F9DE1D0041E0CA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5DFEF79B29F9DE1D0041E0CA /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -216,6 +932,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -270,6 +987,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -282,57 +1000,93 @@
 		};
 		5D6AB1B329F8A2DD00E241AB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB045D68724E8F5B67575BFC /* Pods-The Support Guide.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "The Support Guide/The Support Guide.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = F357BQY2QZ;
+				CURRENT_PROJECT_VERSION = 16;
+				DEVELOPMENT_TEAM = BF3K4AKAJ7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "The Support Guide/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "The Support Guide";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "The Support Guide want media library access to fetch photo for profile";
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "The Support Guide app want calendar access to save follow on";
+				INFOPLIST_KEY_NSCameraUsageDescription = "The Support Guide want camera access to capture photo for profile";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "The Support Guide need your location access to fetch businesses.";
+				INFOPLIST_KEY_NSRemindersUsageDescription = "The Support Guide app want reminder access for follow on reminder";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "in.softment.The-Support-Guide";
+				MARKETING_VERSION = 1.96;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.The-Support-Guide";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		5D6AB1B429F8A2DD00E241AB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BD0A5DBC56B091368C1A08F /* Pods-The Support Guide.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "The Support Guide/The Support Guide.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = F357BQY2QZ;
+				CURRENT_PROJECT_VERSION = 16;
+				DEVELOPMENT_TEAM = BF3K4AKAJ7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "The Support Guide/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "The Support Guide";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "The Support Guide want media library access to fetch photo for profile";
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "The Support Guide app want calendar access to save follow on";
+				INFOPLIST_KEY_NSCameraUsageDescription = "The Support Guide want camera access to capture photo for profile";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "The Support Guide need your location access to fetch businesses.";
+				INFOPLIST_KEY_NSRemindersUsageDescription = "The Support Guide app want reminder access for follow on reminder";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "in.softment.The-Support-Guide";
+				MARKETING_VERSION = 1.96;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.The-Support-Guide";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

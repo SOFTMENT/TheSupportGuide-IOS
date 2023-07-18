@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="_4x 13 23453 1" translatesAutoresizingMaskIntoConstraints="NO" id="rz7-eE-17f">
+                                <rect key="frame" x="116.66666666666669" y="362" width="160" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="5ZI-KY-2g3"/>
+                                    <constraint firstAttribute="height" constant="128" id="pot-Yf-wWa"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ellipse 11097" translatesAutoresizingMaskIntoConstraints="NO" id="QRS-PI-b0p">
+                                <rect key="frame" x="24" y="83" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="LWN-NN-r3i"/>
+                                    <constraint firstAttribute="height" constant="70" id="kpG-X1-Kkh"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ellipse 11097" translatesAutoresizingMaskIntoConstraints="NO" id="Pqw-zf-48n">
+                                <rect key="frame" x="-45" y="500" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="dAO-aW-q5J"/>
+                                    <constraint firstAttribute="height" constant="90" id="zxe-8m-nTF"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ellipse 11097" translatesAutoresizingMaskIntoConstraints="NO" id="SiN-YK-uBI">
+                                <rect key="frame" x="102" y="129" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="BSh-om-4Vf"/>
+                                    <constraint firstAttribute="height" constant="70" id="Kuf-0c-Sjh"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ellipse 11097" translatesAutoresizingMaskIntoConstraints="NO" id="Vfi-7p-ele">
+                                <rect key="frame" x="24" y="175" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="7yQ-0G-Tdq"/>
+                                    <constraint firstAttribute="width" constant="70" id="ZUc-wA-NfB"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ellipse 11097" translatesAutoresizingMaskIntoConstraints="NO" id="acy-Fy-USv">
+                                <rect key="frame" x="318" y="648" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="ZYG-0W-dfg"/>
+                                    <constraint firstAttribute="width" constant="150" id="gYv-pQ-IBW"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="QRS-PI-b0p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="0HT-iS-4fN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="acy-Fy-USv" secondAttribute="trailing" constant="-75" id="1kl-vU-7UZ"/>
+                            <constraint firstItem="Vfi-7p-ele" firstAttribute="centerY" secondItem="SiN-YK-uBI" secondAttribute="centerY" constant="46" id="E7W-B9-Hcg"/>
+                            <constraint firstItem="QRS-PI-b0p" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="FOd-U5-pUp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="acy-Fy-USv" secondAttribute="bottom" constant="20" id="JHW-wr-OnF"/>
+                            <constraint firstItem="rz7-eE-17f" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="QmS-s3-gHd"/>
+                            <constraint firstItem="Pqw-zf-48n" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="-45" id="ROg-FB-SQr"/>
+                            <constraint firstItem="rz7-eE-17f" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="RuH-x4-Qsa"/>
+                            <constraint firstItem="SiN-YK-uBI" firstAttribute="centerY" secondItem="QRS-PI-b0p" secondAttribute="centerY" constant="46" id="VqW-Qn-JhP"/>
+                            <constraint firstItem="SiN-YK-uBI" firstAttribute="leading" secondItem="QRS-PI-b0p" secondAttribute="trailing" constant="8" id="mzN-vr-Ih2"/>
+                            <constraint firstItem="Pqw-zf-48n" firstAttribute="top" secondItem="rz7-eE-17f" secondAttribute="bottom" constant="10" id="s0O-6X-avr"/>
+                            <constraint firstItem="SiN-YK-uBI" firstAttribute="leading" secondItem="Vfi-7p-ele" secondAttribute="trailing" constant="8" id="tBl-Nt-d72"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Ellipse 11097" width="640" height="640"/>
+        <image name="_4x 13 23453 1" width="576" height="320"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

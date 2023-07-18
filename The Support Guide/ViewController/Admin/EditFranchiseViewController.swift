@@ -1,0 +1,372 @@
+//
+//  EditFranchiseViewController.swift
+//  The Support Guide
+//
+//  Created by Vijay Rathore on 16/05/23.
+//
+
+
+import UIKit
+import CropViewController
+import CoreLocation
+import GeoFire
+
+class EditFranchiseViewController : UIViewController {
+    
+    @IBOutlet weak var backBtn: UIView!
+    @IBOutlet weak var imageStackView: UIStackView!
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var imageView: UIView!
+    @IBOutlet weak var mName: UITextField!
+    @IBOutlet weak var mail: UITextField!
+    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var addBtn: UIButton!
+    var isImageSelected = false
+    
+    @IBOutlet weak var fAddressTable: UITableView!
+    @IBOutlet weak var fAbout: UITextView!
+    @IBOutlet weak var fTableViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var fAddress: UITextField!
+    var places : [Place] = []
+    var latitude : Double = 0.0
+    var longitude : Double = 0.0
+    var isLocationSelected = false
+    var franchiseModel : FranchiseModel?
+    override func viewDidLoad() {
+        
+        guard let franchiseModel = franchiseModel else {
+            DispatchQueue.main.async {
+                self.dismiss(animated: true)
+            }
+            return
+        }
+        
+        image.layer.cornerRadius = 8
+        imageView.layer.cornerRadius = 8
+        imageStackView.layer.cornerRadius = 8
+        imageStackView.layer.borderWidth = 1
+        imageStackView.layer.borderColor = UIColor(red: 221/255, green: 221/255, blue: 221/255, alpha: 1).cgColor
+        
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageViewClicked)))
+        
+        image.isUserInteractionEnabled = true
+        image.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageViewClicked)))
+        
+        if let path = franchiseModel.image, !path.isEmpty {
+            
+            self.image.isHidden = false
+            imageView.isHidden = true
+           
+            self.image.sd_setImage(with: URL(string: path), placeholderImage: UIImage(named: "placeholder"))
+        
+        }
+        
+        
+        mName.delegate = self
+        mName.text = franchiseModel.name ?? ""
+    
+        fAbout.layer.cornerRadius = 8
+        fAbout.layer.borderWidth = 1
+        fAbout.layer.borderColor = UIColor(red: 221/255, green: 221/255, blue: 221/255, alpha: 1).cgColor
+        fAbout.contentInset = UIEdgeInsets(top: 6, left: 5, bottom: 6, right: 6)
+        fAbout.text = franchiseModel.about ?? ""
+        
+        fAddress.delegate = self
+        fAddress.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
+        fAddress.text = franchiseModel.address ?? ""
+        
+        mail.delegate = self
+        mail.text = franchiseModel.email ?? ""
+        
+        password.delegate = self
+        password.text = franchiseModel.password ?? ""
+        
+        latitude = franchiseModel.latitude ?? 0.0
+        longitude = franchiseModel.longitude ?? 0.0
+        isLocationSelected = true
+        
+        addBtn.layer.cornerRadius = 8
+        
+        backBtn.isUserInteractionEnabled = true
+        backBtn.layer.cornerRadius = 8
+        backBtn.dropShadow()
+        backBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(backBtnClicked)))
+        
+        fAddressTable.delegate = self
+        fAddressTable.dataSource = self
+        fAddressTable.isScrollEnabled = false
+        fAddressTable.contentInsetAdjustmentBehavior = .never
+        
+        view.isUserInteractionEnabled = true
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
+    }
+    
+    @objc func backBtnClicked() {
+        self.dismiss(animated: true)
+    }
+    
+    @objc func locationCellClicked(myGesture : MyGesture){
+        fAddressTable.isHidden = true
+        view.endEditing(true)
+    
+
+        let place = places[myGesture.index]
+        fAddress.text = place.name ?? ""
+        
+        self.isLocationSelected = true
+     
+    
+        GooglePlacesManager.shared.resolveLocation(for: place) { result in
+            switch result {
+            case .success(let coordinates) :
+                self.latitude = coordinates.latitude
+                self.longitude = coordinates.longitude
+             
+                
+                break
+            case .failure(let error) :
+                print(error)
+                
+            }
+        }
+    }
+    public func updateTableViewHeight(){
+        
+        self.fTableViewHeight.constant = self.fAddressTable.contentSize.height
+        self.fAddressTable.layoutIfNeeded()
+    }
+    
+    @objc func textFieldDidChange(textField : UITextField){
+        guard let query = textField.text, !query.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+            self.places.removeAll()
+        
+            self.fAddressTable.reloadData()
+            return
+        }
+        
+        
+        GooglePlacesManager.shared.findPlaces(query: query ) { result in
+            switch result {
+            case .success(let places) :
+                self.places = places
+                print(self.places)
+                self.fAddressTable.reloadData()
+                break
+            case .failure(let error) :
+                print(error)
+            }
+        }
+    }
+    @objc func hideKeyboard(){
+        self.view.endEditing(true)
+    }
+    
+    @IBAction func addBtnClicked(_ sender: Any) {
+        let sName = mName.text
+        let sAbout = fAbout.text
+        let sEmail = mail.text
+        let sPassword = password.text
+        
+        if sName == "" {
+            self.showToast(message: "Enter Franchise Name")
+        }
+        else if !isLocationSelected {
+            self.showToast(message: "Enter Address")
+        }
+        else if sAbout == "" {
+            self.showToast(message: "Enter About")
+        }
+        else if sEmail == "" {
+            self.showToast(message: "Enter Email Address")
+        }
+        else if sPassword == "" {
+            self.showToast(message: "Enter Password")
+        }
+        else {
+            ProgressHUDShow(text: "")
+            self.updateAuthUser(uid : self.franchiseModel!.uid ?? "123",name: sName!, email: sEmail!, password: sPassword!) { uid, error in
+                
+                if let error = error {
+                    self.ProgressHUDHide()
+                    self.showError(error)
+                }
+                else {
+          
+                    self.franchiseModel!.about = sAbout
+                    self.franchiseModel!.address = self.fAddress.text
+                    self.franchiseModel!.createDate = Date()
+                    self.franchiseModel!.email = sEmail
+                    self.franchiseModel!.password = sPassword
+                    self.franchiseModel!.latitude = self.latitude
+                    self.franchiseModel!.longitude = self.longitude
+                    self.franchiseModel!.name = sName
+                    let location = CLLocationCoordinate2D(latitude: self.latitude, longitude: self.longitude)
+                    let hash = GFUtils.geoHash(forLocation: location)
+                    self.franchiseModel!.geoHash = hash
+                        
+                        if self.isImageSelected {
+                            self.uploadImageOnFirebase(id: self.franchiseModel!.uid ?? "123") { downloadURL in
+                                self.franchiseModel!.image = downloadURL
+                                self.updateFran(franchiseModel: self.franchiseModel!)
+                            }
+                          
+                        }
+                        else {
+                            self.updateFran(franchiseModel: self.franchiseModel!)
+                        }
+                     
+                        
+                       
+                    
+                }
+            }
+        
+        }
+    }
+    
+    func updateFran(franchiseModel : FranchiseModel){
+        self.updateFranchise(franchiseModel: franchiseModel) { error in
+            self.ProgressHUDHide()
+            if let error = error {
+                self.showError(error)
+            }
+            else {
+                self.showToast(message: "Franchise Edited")
+                let seconds = 2.5
+                DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                    self.dismiss(animated: true)
+                }
+            }
+        }
+    }
+    @objc func imageViewClicked(){
+        chooseImageFromPhotoLibrary()
+    }
+    func chooseImageFromPhotoLibrary(){
+        
+        let image = UIImagePickerController()
+        image.delegate = self
+        image.title = title
+        image.sourceType = .photoLibrary
+        self.present(image,animated: true)
+    }
+}
+extension EditFranchiseViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate,CropViewControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let editedImage = info[.originalImage] as? UIImage {
+            
+            
+            
+            self.dismiss(animated: true) {
+                
+                let cropViewController = CropViewController(image: editedImage)
+                cropViewController.title = picker.title
+                cropViewController.delegate = self
+                cropViewController.customAspectRatio = CGSize(width: 1  , height: 1)
+                cropViewController.aspectRatioLockEnabled = true
+                cropViewController.aspectRatioPickerButtonHidden = true
+                self.present(cropViewController, animated: true, completion: nil)
+            }
+            
+            
+            
+        }
+        
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func cropViewController(_ cropViewController: CropViewController, didCropToImage image: UIImage, withRect cropRect: CGRect, angle: Int) {
+        
+      
+        
+        self.image.image = image
+        self.image.isHidden = false
+        imageView.isHidden = true
+        self.isImageSelected = true
+    
+
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    func uploadImageOnFirebase(id : String,completion : @escaping (String) -> Void ) {
+        
+        let storage = FirebaseStoreManager.storage.reference().child("FranchisesImages").child(id).child("\(id).png")
+        var downloadUrl = ""
+        
+        var uploadData : Data!
+        
+        
+        uploadData = (self.image.image?.jpegData(compressionQuality: 0.4))!
+        
+        
+        
+        storage.putData(uploadData, metadata: nil) { (metadata, error) in
+            
+            if error == nil {
+                storage.downloadURL { (url, error) in
+                    if error == nil {
+                        downloadUrl = url!.absoluteString
+                    }
+                    completion(downloadUrl)
+                    
+                }
+            }
+            else {
+                completion(downloadUrl)
+            }
+            
+        }
+    }
+    
+    
+}
+extension EditFranchiseViewController : UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if places.count > 0 {
+            tableView.isHidden = false
+        }
+        else {
+            tableView.isHidden = true
+        }
+        return places.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "placescell", for: indexPath) as? Google_Places_Cell {
+            
+            
+            cell.name.text = places[indexPath.row].name ?? "Something Went Wrong"
+            cell.mView.isUserInteractionEnabled = true
+            
+            let myGesture = MyGesture(target: self, action: #selector(locationCellClicked(myGesture:)))
+            myGesture.index = indexPath.row
+            cell.mView.addGestureRecognizer(myGesture)
+            
+            let totalRow = tableView.numberOfRows(inSection: indexPath.section)
+            if(indexPath.row == totalRow - 1)
+            {
+                DispatchQueue.main.async {
+                    self.updateTableViewHeight()
+                }
+            }
+            return cell
+        }
+        
+        return Google_Places_Cell()
+    }
+    
+    
+    
+}
+extension EditFranchiseViewController : UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        view.endEditing(true)
+        return true
+    }
+}
