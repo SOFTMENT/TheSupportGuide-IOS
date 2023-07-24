@@ -368,7 +368,7 @@ extension HomeViewController : CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
  
        let userLocation = locations[0] as CLLocation
-       Constants.clLocation = userLocation
+      Constants.clLocation = userLocation
     
         getAllBusinessByLocation()
         

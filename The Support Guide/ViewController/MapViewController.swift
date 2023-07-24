@@ -60,6 +60,12 @@ class MapViewController : UIViewController {
     @objc func catFilterClicked(){
         let alert = UIAlertController(title: nil, message: "Filter By Category", preferredStyle: .actionSheet)
         
+        alert.addAction(UIAlertAction(title: "Select All", style: .default,handler: { action in
+           
+            self.filterBusiness(id: "")
+           
+        }))
+        
         alert.addAction(UIAlertAction(title: "New Coming Offers", style: .default,handler: { action in
            
             self.filterBusiness(id: "")

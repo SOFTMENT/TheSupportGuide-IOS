@@ -125,7 +125,8 @@ class AdminViewFranchiseProfileViewController : UIViewController {
         }
         else if segue.identifier == "adminPipelineSeg" {
             if let VC = segue.destination as? AdminPipelineViewController {
-                VC.franchiseId = self.franchiseModel!.uid 
+                VC.franchiseId = self.franchiseModel!.uid
+                
             }
         }
         else if segue.identifier == "franchiseGoalSeg" {

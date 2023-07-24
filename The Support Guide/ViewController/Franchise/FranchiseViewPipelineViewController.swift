@@ -35,6 +35,7 @@ class FranchiseViewPipelineViewController : UIViewController {
     @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     var pipelineModel : PipelineModel?
     var noteModels = Array<NoteModel>()
+    var isAdmin = false
     override func viewDidLoad() {
         
         guard let pipelineModel = pipelineModel else {
@@ -74,6 +75,11 @@ class FranchiseViewPipelineViewController : UIViewController {
         
         addView.isUserInteractionEnabled = true
         addView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(addNoteClicked)))
+        
+        if isAdmin {
+            addView.isHidden = true
+        }
+        
         
         self.ProgressHUDShow(text: "")
         getAllNotes(franchiseId: pipelineModel.franchiseId ?? "123", pipelineId: pipelineModel.id ?? "123") { noteModels, error in

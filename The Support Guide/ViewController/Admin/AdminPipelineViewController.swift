@@ -143,6 +143,7 @@ class AdminPipelineViewController : UIViewController {
             if let VC  = segue.destination as? FranchiseViewPipelineViewController {
                 if let pipelineModel = sender as? PipelineModel {
                     VC.pipelineModel = pipelineModel
+                    VC.isAdmin = true
                 }
             }
         }

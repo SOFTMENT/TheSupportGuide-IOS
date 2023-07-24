@@ -929,7 +929,7 @@ extension UIViewController {
         
     }
     func getAllSalesTransactionByDate(by memberId : String, startDate : Date, endDate : Date, completion : @escaping (Array<FundraiserTransactionModel>?,String?)->Void){
-        FirebaseStoreManager.db.collection("FundraiserTransactionModel").whereField("memberId", isEqualTo: memberId).whereField("date", isGreaterThan: startDate)
+        FirebaseStoreManager.db.collection("FundraiserTransactions").whereField("memberId", isEqualTo: memberId).whereField("date", isGreaterThan: startDate)
             .whereField("date", isLessThan: endDate).getDocuments { snapshot, error in
                 if let error = error {
                     completion(nil, error.localizedDescription)

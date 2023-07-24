@@ -63,7 +63,7 @@ class UserBusinessAllLocationViewController : UIViewController {
             
             let coordinate = CLLocationCoordinate2DMake(latitude,longitude)
             let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
-            mapItem.name = B2BModel.data!.name ?? ""
+      
             mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
         }))
         

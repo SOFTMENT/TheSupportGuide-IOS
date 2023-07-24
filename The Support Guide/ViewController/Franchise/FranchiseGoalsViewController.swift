@@ -18,11 +18,13 @@ class FranchiseGoalsViewController : UIViewController {
     var mainGoalModels = Array<GoalModel>()
     var franchiseTypeSelected : FranchiseType = .B2B
     var franchiseId : String?
+    var isAdmin = false
     override func viewDidLoad() {
         
         var id = ""
         if let franchiseId = franchiseId {
             id = franchiseId
+            isAdmin = true
         }
         else {
             id = FranchiseModel.data!.uid ?? "123"
@@ -38,6 +40,10 @@ class FranchiseGoalsViewController : UIViewController {
         
         addView.isUserInteractionEnabled = true
         addView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(addGoalClicked)))
+        
+        if isAdmin {
+            addView.isHidden = true
+        }
         
         let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         UISegmentedControl.appearance().setTitleTextAttributes(titleTextAttributes, for: .selected)
