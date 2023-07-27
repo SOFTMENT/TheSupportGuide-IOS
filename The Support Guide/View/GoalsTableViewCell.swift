@@ -9,8 +9,9 @@ import UIKit
 
 class GoalsTableViewCell : UITableViewCell {
     
- 
+
     @IBOutlet weak var finalDate: UILabel!
+    @IBOutlet weak var deleteGoal: UILabel!
     @IBOutlet weak var startDate: UILabel!
     @IBOutlet weak var status: UILabel!
     @IBOutlet weak var note: UILabel!

@@ -847,10 +847,19 @@ extension UIViewController {
                 completion(nil, error.localizedDescription)
             }
             else {
+              
                 
                 if let snapshot = snapshot, !snapshot.isEmpty {
+                    var goalModels = Array<GoalModel>()
+                    for qdr in snapshot.documents {
+                        if let goalModel = try? qdr.data(as: GoalModel.self) {
+                            if (goalModel.finalDate ?? Date()) > Date() {
+                                goalModels.append(goalModel)
+                            }
+                        }
+                    }
                     
-                    let goalModels = snapshot.documents.compactMap{ try? $0.data(as: GoalModel.self) }
+                   
                     completion(goalModels, nil)
                     
                     return
@@ -868,8 +877,14 @@ extension UIViewController {
             else {
                 
                 if let snapshot = snapshot, !snapshot.isEmpty {
-                    
-                    let goalModels = snapshot.documents.compactMap{ try? $0.data(as: GoalModel.self) }
+                    var goalModels = Array<GoalModel>()
+                    for qdr in snapshot.documents {
+                        if let goalModel = try? qdr.data(as: GoalModel.self) {
+                            if (goalModel.finalDate ?? Date()) > Date() {
+                                goalModels.append(goalModel)
+                            }
+                        }
+                    }
                     completion(goalModels, nil)
                     
                     return
@@ -889,7 +904,14 @@ extension UIViewController {
                 
                 if let snapshot = snapshot, !snapshot.isEmpty {
                     
-                    let goalModels = snapshot.documents.compactMap{ try? $0.data(as: GoalModel.self) }
+                    var goalModels = Array<GoalModel>()
+                    for qdr in snapshot.documents {
+                        if let goalModel = try? qdr.data(as: GoalModel.self) {
+                            if (goalModel.finalDate ?? Date()) > Date() {
+                                goalModels.append(goalModel)
+                            }
+                        }
+                    }
                     completion(goalModels, nil)
                     
                     return
@@ -930,7 +952,7 @@ extension UIViewController {
     }
     func getAllSalesTransactionByDate(by memberId : String, startDate : Date, endDate : Date, completion : @escaping (Array<FundraiserTransactionModel>?,String?)->Void){
         FirebaseStoreManager.db.collection("FundraiserTransactions").whereField("memberId", isEqualTo: memberId).whereField("date", isGreaterThan: startDate)
-            .whereField("date", isLessThan: endDate).getDocuments { snapshot, error in
+            .whereField("date", isLessThan: endDate).addSnapshotListener { snapshot, error in
                 if let error = error {
                     completion(nil, error.localizedDescription)
                 }

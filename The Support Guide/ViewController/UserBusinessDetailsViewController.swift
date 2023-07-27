@@ -23,7 +23,7 @@ class UserBusinessDetailsViewController : UIViewController {
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var mProfile: UIImageView!
     @IBOutlet weak var businessName: UILabel!
-    @IBOutlet weak var businessEmail: UILabel!
+   
     @IBOutlet weak var businessPhone: UILabel!
     @IBOutlet weak var businessLocation: UILabel!
     @IBOutlet weak var openingTime: UILabel!
@@ -63,7 +63,7 @@ class UserBusinessDetailsViewController : UIViewController {
         }
         
         businessName.text = b2bModel.name ?? ""
-        businessEmail.text = b2bModel.email ?? ""
+      
         businessPhone.text = b2bModel.phoneNumber ?? ""
         businessLocation.text = b2bModel.address ?? ""
         
@@ -106,7 +106,8 @@ class UserBusinessDetailsViewController : UIViewController {
         
         updateBusinessPageClicked()
         
-     
+        businessPhone.isUserInteractionEnabled = true
+        businessPhone.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(phoneNumberClicked)))
       
         if !FirebaseStoreManager.auth.currentUser!.isAnonymous {
             checkLike(b2bId: b2bModel.uid ?? "123", completion: { isLike in
@@ -120,6 +121,16 @@ class UserBusinessDetailsViewController : UIViewController {
                 }
             })
         }
+    }
+    private func callNumber(phoneNumber: String) {
+        guard let url = URL(string: "telprompt://\(phoneNumber)"),
+            UIApplication.shared.canOpenURL(url) else {
+            return
+        }
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+    @objc func phoneNumberClicked(){
+        callNumber(phoneNumber: businessPhone.text ?? "")
     }
     
     @objc func favBtnClicked(){

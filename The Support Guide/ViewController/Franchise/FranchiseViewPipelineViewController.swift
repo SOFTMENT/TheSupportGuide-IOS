@@ -10,6 +10,7 @@ import UIKit
 class FranchiseViewPipelineViewController : UIViewController {
     @IBOutlet weak var noNotesAvailable: UILabel!
     
+    @IBOutlet weak var trash: UIView!
     @IBOutlet weak var backView: UIView!
    
     @IBOutlet weak var convertBtn: UIButton!
@@ -80,6 +81,14 @@ class FranchiseViewPipelineViewController : UIViewController {
             addView.isHidden = true
         }
         
+        if isAdmin {
+            trash.isHidden = true
+        }
+        
+        trash.layer.cornerRadius = 8
+        trash.isUserInteractionEnabled = true
+        trash.dropShadow()
+        trash.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(deletePipeline)))
         
         self.ProgressHUDShow(text: "")
         getAllNotes(franchiseId: pipelineModel.franchiseId ?? "123", pipelineId: pipelineModel.id ?? "123") { noteModels, error in
@@ -93,6 +102,26 @@ class FranchiseViewPipelineViewController : UIViewController {
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    @objc func deletePipeline(){
+        
+        let alert = UIAlertController(title: "Delete", message: "Are you sure you want to delete this pipeline?", preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { action in
+            self.ProgressHUDShow(text: "Deleting...")
+            FirebaseStoreManager.db.collection("Franchises").document(self.pipelineModel!.franchiseId ?? "123").collection("Pipelines").document(self.pipelineModel!.id ?? "123").delete { error in
+                self.ProgressHUDHide()
+                self.showToast(message: "Deleted")
+                let seconds = 2.5
+                DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                    self.dismiss(animated: true)
+                }
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        present(alert, animated: true)
+        
+        
     }
     
     @objc func addNoteClicked(){

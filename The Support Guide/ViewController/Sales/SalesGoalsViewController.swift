@@ -45,7 +45,25 @@ class SalesGoalsViewController : UIViewController {
     @objc func addGoalClicked(){
             performSegue(withIdentifier: "addFundraiserGoalSeg", sender: nil)
     }
-
+    @objc func deleteGoalClicked(value : MyGesture){
+        
+        let alert = UIAlertController(title: "Delete", message: "Are you sure you want to delete this goal?", preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { action in
+            self.ProgressHUDShow(text: "")
+            FirebaseStoreManager.db.collection("Fundraisers").document(FundraiserModel.data!.uid ?? "123").collection("Goals").document(value.id).delete { error in
+                self.ProgressHUDHide()
+                if let error = error {
+                    self.showError(error.localizedDescription)
+                }
+                else {
+                    self.showToast(message: "Deleted")
+                }
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        present(alert, animated: true)
+      
+    }
 }
 extension SalesGoalsViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -64,6 +82,13 @@ extension SalesGoalsViewController : UITableViewDelegate, UITableViewDataSource 
             cell.startDate.text = "\(self.convertDateFormaterWithoutDash(goalModel.goalCreate ?? Date()))"
             cell.finalDate.text = "\(self.convertDateFormaterWithoutDash(goalModel.finalDate ?? Date()))"
             cell.note.text = goalModel.memberName ?? "123"
+            
+          
+                cell.deleteGoal.isHidden = false
+                cell.deleteGoal.isUserInteractionEnabled = true
+                let deleteGest = MyGesture(target: self, action: #selector(deleteGoalClicked(value: )))
+                deleteGest.id = goalModel.id ?? ""
+                cell.deleteGoal.addGestureRecognizer(deleteGest)
             
             
             self.getAllSalesTransactionByDate(by: goalModel.memberId ?? "123", startDate: goalModel.goalCreate ?? Date(), endDate: goalModel.finalDate ?? Date()) { transactionModels, error in

@@ -49,7 +49,17 @@ class UserBusinessAllLocationViewController : UIViewController {
         backView.isUserInteractionEnabled = true
         backView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(backViewClicked)))
     }
+    private func callNumber(phoneNumber: String) {
+        guard let url = URL(string: "telprompt://\(phoneNumber)"),
+            UIApplication.shared.canOpenURL(url) else {
+            return
+        }
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
     
+    @objc func phoneClicked(value : MyGesture){
+        callNumber(phoneNumber: storeModels[value.index].phone ?? "")
+    }
     @objc func backViewClicked(){
         self.dismiss(animated: true)
     }
@@ -101,7 +111,11 @@ extension UserBusinessAllLocationViewController : UITableViewDelegate, UITableVi
             cell.openInMaps.isUserInteractionEnabled = true
             cell.openInMaps.addGestureRecognizer(myGest)
             
-        
+            cell.storePhone.isUserInteractionEnabled = true
+            let phoneGest = MyGesture(target: self, action: #selector(phoneClicked(value: )))
+            phoneGest.index = indexPath.row
+            cell.storePhone.addGestureRecognizer(phoneGest)
+            
             return cell
         }
         return StoreTableViewCell()

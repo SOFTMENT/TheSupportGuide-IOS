@@ -19,9 +19,10 @@ class FranchiseGoalsViewController : UIViewController {
     var franchiseTypeSelected : FranchiseType = .B2B
     var franchiseId : String?
     var isAdmin = false
+    var id = ""
     override func viewDidLoad() {
         
-        var id = ""
+        
         if let franchiseId = franchiseId {
             id = franchiseId
             isAdmin = true
@@ -61,6 +62,26 @@ class FranchiseGoalsViewController : UIViewController {
                 
             }
         }
+    }
+    
+    @objc func deleteGoalClicked(value : MyGesture){
+        
+        let alert = UIAlertController(title: "Delete", message: "Are you sure you want to delete this goal?", preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { action in
+            self.ProgressHUDShow(text: "")
+            FirebaseStoreManager.db.collection("Franchises").document(self.id).collection("Goals").document(value.id).delete { error in
+                self.ProgressHUDHide()
+                if let error = error {
+                    self.showError(error.localizedDescription)
+                }
+                else {
+                    self.showToast(message: "Deleted")
+                }
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        present(alert, animated: true)
+      
     }
     
     func loadTableView(franchiseType : FranchiseType){
@@ -124,6 +145,17 @@ extension FranchiseGoalsViewController : UITableViewDelegate, UITableViewDataSou
             cell.startDate.text = "\(self.convertDateFormaterWithoutDash(goalModel.goalCreate ?? Date()))"
             cell.finalDate.text = "\(self.convertDateFormaterWithoutDash(goalModel.finalDate ?? Date()))"
             cell.note.text = goalModel.note ?? "ERROR"
+            
+            if isAdmin {
+                cell.deleteGoal.isHidden = true
+            }
+            else {
+                cell.deleteGoal.isHidden = false
+                cell.deleteGoal.isUserInteractionEnabled = true
+                let deleteGest = MyGesture(target: self, action: #selector(deleteGoalClicked(value: )))
+                deleteGest.id = goalModel.id ?? ""
+                cell.deleteGoal.addGestureRecognizer(deleteGest)
+            }
             
             if goalModel.type == "B2B" {
                 self.getAllBusinessesByDate(by: goalModel.franchiseId ?? "123", startDate: goalModel.goalCreate ?? Date(), endDate: goalModel.finalDate ?? Date()) { b2bModels, error in

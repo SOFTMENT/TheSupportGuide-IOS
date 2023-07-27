@@ -2463,7 +2463,7 @@ Communities Support One Another.</string>
                                                                             <constraint firstAttribute="height" constant="22" id="qvJ-Px-FJe"/>
                                                                         </constraints>
                                                                     </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification Centre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aR4-dr-GGm">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification Center" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aR4-dr-GGm">
                                                                         <rect key="frame" x="58" y="17.333333333333314" width="131" height="19.666666666666671"/>
                                                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                                                         <color key="textColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -3556,7 +3556,7 @@ Communities Support One Another.</string>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Iw-lV-IA1">
-                                        <rect key="frame" x="64" y="15.666666666666666" width="123.66666666666669" height="22.666666666666671"/>
+                                        <rect key="frame" x="64" y="15.666666666666666" width="123.66666666666669" height="22.666666666666679"/>
                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -3648,7 +3648,7 @@ Communities Support One Another.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="mAL-U9-g1e">
-                                                <rect key="frame" x="108" y="25" width="306" height="66"/>
+                                                <rect key="frame" x="108" y="37.333333333333329" width="306" height="41.666666666666671"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pT6-yv-GjC">
                                                         <rect key="frame" x="0.0" y="0.0" width="108.33333333333333" height="19.666666666666668"/>
@@ -3656,14 +3656,8 @@ Communities Support One Another.</string>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="support@softment.in" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="js7-tv-PPs">
-                                                        <rect key="frame" x="0.0" y="25.666666666666671" width="136.66666666666666" height="18.333333333333329"/>
-                                                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
-                                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="xYx-H7-hMz">
-                                                        <rect key="frame" x="0.0" y="50" width="87.666666666666671" height="16"/>
+                                                        <rect key="frame" x="0.0" y="25.666666666666671" width="87.666666666666671" height="16"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Gtx-GP-o7H">
                                                                 <rect key="frame" x="0.0" y="0.0" width="87.666666666666671" height="16"/>
@@ -3941,7 +3935,6 @@ Communities Support One Another.</string>
                         <outlet property="aboutBusiness" destination="E9x-qj-cc7" id="qEX-0q-LLe"/>
                         <outlet property="aboutOwnerBtn" destination="eaQ-I1-wqn" id="BPY-nV-xDy"/>
                         <outlet property="backView" destination="Xi2-g3-cs4" id="SRa-rM-JGu"/>
-                        <outlet property="businessEmail" destination="js7-tv-PPs" id="TfF-Nq-sxd"/>
                         <outlet property="businessLocation" destination="oHp-Re-0cD" id="yZS-qa-YJz"/>
                         <outlet property="businessName" destination="pT6-yv-GjC" id="3su-cg-b77"/>
                         <outlet property="businessPhone" destination="nwT-bD-poC" id="5M1-GA-7PT"/>
