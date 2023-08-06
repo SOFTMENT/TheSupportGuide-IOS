@@ -13,6 +13,7 @@ import GeoFire
 
 class FranchiseEditFundraiserViewController : UIViewController {
 
+    @IBOutlet weak var deleteBtn: UIView!
     @IBOutlet weak var backBtn: UIView!
     @IBOutlet weak var imageStackView: UIStackView!
     @IBOutlet weak var image: UIImageView!
@@ -96,11 +97,21 @@ class FranchiseEditFundraiserViewController : UIViewController {
         fAddressTable.isScrollEnabled = false
         fAddressTable.contentInsetAdjustmentBehavior = .never
         
+        deleteBtn.isUserInteractionEnabled = true
+        deleteBtn.dropShadow()
+        deleteBtn.layer.cornerRadius = 8
+        deleteBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(deleteFundrasierClicked)))
+        
         view.isUserInteractionEnabled = true
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
       
     }
     
+    @objc func deleteFundrasierClicked(){
+        
+        let alert = UIAlertController(title: "Delete", message: "Are you sure you want to delet", preferredStyle: <#T##UIAlertController.Style#>)
+        
+    }
  
 
     
