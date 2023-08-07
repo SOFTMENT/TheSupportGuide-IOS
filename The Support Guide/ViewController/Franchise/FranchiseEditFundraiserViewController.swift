@@ -10,6 +10,8 @@ import UIKit
 import CropViewController
 import CoreLocation
 import GeoFire
+import Firebase
+import FirebaseFirestoreSwift
 
 class FranchiseEditFundraiserViewController : UIViewController {
 
@@ -107,9 +109,58 @@ class FranchiseEditFundraiserViewController : UIViewController {
       
     }
     
+    func deleteFundraiser(){
+        self.ProgressHUDShow(text: "Deleting...")
+        
+        let mbatch = FirebaseStoreManager.db.batch()
+        mbatch.setData(["totalFundraiserEarning" : FieldValue.increment(Int64(-(fundraiserModel?.totalEarning ?? 0)))], forDocument: FirebaseStoreManager.db.collection("Franchises").document(fundraiserModel!.franchiseId ?? "123"),merge: true)
+        
+        mbatch.deleteDocument(FirebaseStoreManager.db.collection("Fundraisers").document(fundraiserModel!.uid ?? "123"))
+        
+        
+        
+        FirebaseStoreManager.db.collection("Fundraisers").document(fundraiserModel!.uid ?? "123").collection("Members").getDocuments { snapshot, error in
+            
+            if let snapshot = snapshot, !snapshot.isEmpty {
+                let batch = FirebaseStoreManager.db.batch()
+                for qdr in snapshot.documents {
+                    if let memberModel = try? qdr.data(as: SalesMemberModel.self) {
+                        batch.deleteDocument(  FirebaseStoreManager.db.collection("Fundraisers").document(self.fundraiserModel!.uid ?? "123").collection("Members").document(memberModel.id ?? "123"))
+                    }
+                }
+                batch.commit()
+            }
+            
+        }
+        
+        FirebaseStoreManager.db.collection("Fundraisers").document(fundraiserModel!.uid ?? "123").collection("Goals").getDocuments { snapshot, error in
+            
+            if let snapshot = snapshot, !snapshot.isEmpty {
+                let batch = FirebaseStoreManager.db.batch()
+                for qdr in snapshot.documents {
+                    if let goalModel = try? qdr.data(as: GoalModel.self) {
+                        batch.deleteDocument(  FirebaseStoreManager.db.collection("Fundraisers").document(self.fundraiserModel!.uid ?? "123").collection("Goals").document(goalModel.id ?? "123"))
+                    }
+                }
+                batch.commit()
+            }
+            
+        }
+        
+        
+        
+    }
+    
     @objc func deleteFundrasierClicked(){
         
-        let alert = UIAlertController(title: "Delete", message: "Are you sure you want to delet", preferredStyle: <#T##UIAlertController.Style#>)
+        let alert = UIAlertController(title: "Delete", message: "Are you sure you want to delet", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { action in
+            self.deleteFundraiser()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        
+        present(alert, animated: true)
         
     }
  

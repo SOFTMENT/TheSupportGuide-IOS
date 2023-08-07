@@ -52,7 +52,8 @@ class HomeViewController : UIViewController {
                 welcomeUsername.text = "Welcome, \(userModel.fullName ?? "")"
                 
                 if let profilePath = userModel.profilePic, !profilePath.isEmpty {
-                    profilePic.sd_setImage(with: URL(string: profilePath), placeholderImage: UIImage(named: "profile-placeholder"))
+                    profilePic.sd_setImage(with: URL(string: profilePath), placeholderImage: UIImage(named: "profile-placeholder"),options: .continueInBackground)
+                    
                 }
             }
            
@@ -321,7 +322,7 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
             cell.mView.layer.cornerRadius = 8
             cell.mProfile.layer.cornerRadius = 8
             if let path = b2bModel.image, !path.isEmpty {
-                cell.mProfile.sd_setImage(with: URL(string: path), placeholderImage: UIImage(named: "placeholder"))
+                cell.mProfile.sd_setImage(with: URL(string: path), placeholderImage: UIImage(named: "placeholder"),options: .highPriority)
             }
             cell.mName.text = b2bModel.name ?? ""
             cell.mAddress.text = b2bModel.address ?? ""
