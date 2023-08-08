@@ -18,6 +18,7 @@ import StripeApplePay
 
 
 extension UITextField {
+          
     func setLeftPaddingPoints(_ amount:CGFloat){
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
         self.leftView = paddingView
@@ -79,13 +80,6 @@ extension UITextField {
     }
     
 }
-
-
-
-
-
-
-
 
 extension Date {
     
@@ -171,7 +165,7 @@ extension UIViewController {
         
         var url = Constants.BASE_URL
         if Constants.isLive {
-            url = url + "create_customer.php"
+            url = url + "live/create_customer.php"
         }
         else {
             url = url + "test/test_create_customer.php"
@@ -218,7 +212,7 @@ extension UIViewController {
         
         var url = Constants.BASE_URL
         if Constants.isLive {
-            url = url + "createpaymentintent.php"
+            url = url + "live/create_payment_intent.php"
         }
         else {
             url = url + "test/test_create_payment_intent.php"
@@ -260,7 +254,7 @@ extension UIViewController {
         ]
         var url = Constants.BASE_URL
         if Constants.isLive {
-            url = url + "retrieve_subscription.php"
+            url = url + "live/retrieve_subscription.php"
         }
         else {
             url = url + "test/test_retrieve_subscription.php"
@@ -276,10 +270,7 @@ extension UIViewController {
         request.httpBody = postData as Data
         
         let task = URLSession.shared.dataTask(with: request as URLRequest, completionHandler: {  (data, response, error) in
-            
-            
-            
-            
+
             guard let data = data,
                   let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String : Any],
                   let end_time = json["current_period_end"] as? Int,
@@ -1522,7 +1513,7 @@ func getViewControllerUsingIdentifier(mIdentifier : String) -> UIViewController{
         return (storyBoard.instantiateViewController(identifier: mIdentifier) as? UITabBarController)!
 
     default:
-        var storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
         return (storyBoard.instantiateViewController(identifier: Constants.StroyBoard.entryViewController) as? EntryPageViewController)!
     } 
 }

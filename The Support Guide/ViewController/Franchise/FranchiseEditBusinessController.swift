@@ -13,6 +13,7 @@ import PassKit
 
 class FranchiseEditBusinessController : UIViewController {
     
+    @IBOutlet weak var deleteB2BBtn: UIView!
     
     @IBOutlet weak var googleBusinessLink: UITextField!
     let catPicker = UIPickerView()
@@ -150,6 +151,11 @@ class FranchiseEditBusinessController : UIViewController {
         view.isUserInteractionEnabled = true
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
      
+        //DELETEB2B
+        deleteB2BBtn.isUserInteractionEnabled = true
+        deleteB2BBtn.layer.cornerRadius = 8
+        deleteB2BBtn.dropShadow()
+        deleteB2BBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(deleteB2bClicked)))
         
         createOpeningDatePicker()
         createClosingDatePicker()
@@ -161,6 +167,83 @@ class FranchiseEditBusinessController : UIViewController {
             self.categoryModels.append(contentsOf: categoriesModel)
             self.catPicker.reloadAllComponents()
         }
+    }
+    
+    func deleteB2B(){
+        self.ProgressHUDShow(text: "Deleting...")
+        
+        FirebaseStoreManager.db.collection("Businesses").document(b2bModel!.uid ?? "123").collection("Vouchers").getDocuments { snapshot, error in
+            
+            if let snapshot = snapshot, !snapshot.isEmpty {
+                let batch = FirebaseStoreManager.db.batch()
+                for qdr in snapshot.documents {
+                    if let voucherModel = try? qdr.data(as: VoucherModel.self) {
+                        batch.deleteDocument(FirebaseStoreManager.db.collection("Businesses").document(self.b2bModel!.uid ?? "123").collection("Vouchers").document(voucherModel.id ?? "123"))
+                    }
+                }
+                batch.commit()
+            }
+            
+        }
+        
+        FirebaseStoreManager.db.collection("Businesses").document(b2bModel!.uid ?? "123").collection("PageVisits").getDocuments { snapshot, error in
+            
+            if let snapshot = snapshot, !snapshot.isEmpty {
+                let batch = FirebaseStoreManager.db.batch()
+                for qdr in snapshot.documents {
+                
+                    batch.deleteDocument(FirebaseStoreManager.db.collection("Businesses").document(self.b2bModel!.uid ?? "123").collection("PageVisits").document(qdr.documentID))
+                   
+                }
+                batch.commit()
+            }
+            
+        }
+    
+        FirebaseStoreManager.db.collection("Businesses").document(b2bModel!.uid ?? "123").collection("GoogleReviews").getDocuments { snapshot, error in
+            let batch = FirebaseStoreManager.db.batch()
+            batch.deleteDocument(FirebaseStoreManager.db.collection("Businesses").document(self.b2bModel!.uid ?? "123"))
+            batch.deleteDocument(FirebaseStoreManager.db.collection("Businesses").document(self.b2bModel!.uid ?? "123").collection("Owner").document(self.b2bModel!.uid ?? "123"))
+     
+            if let snapshot = snapshot, !snapshot.isEmpty {
+         
+                for qdr in snapshot.documents {
+                  
+                    batch.deleteDocument(FirebaseStoreManager.db.collection("Businesses").document(self.b2bModel!.uid ?? "123").collection("GoogleReviews").document(qdr.documentID))
+                   
+                }
+               
+            }
+            batch.commit { error in
+                self.ProgressHUDHide()
+                if let error = error {
+                    self.showError(error.localizedDescription)
+                }
+                else {
+                    self.showToast(message: "Deleted")
+                    let seconds = 2.5
+                    DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                        self.dismiss(animated: true)
+                    }
+                }
+            }
+        }
+        
+     
+        
+        
+    }
+    
+    
+    @objc func deleteB2bClicked(){
+        let alert = UIAlertController(title: "Delete", message: "Are you sure you want to delete this business?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { action in
+            self.deleteB2B()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        
+        present(alert, animated: true)
     }
     
     @objc func catPickerDoneClicked(){

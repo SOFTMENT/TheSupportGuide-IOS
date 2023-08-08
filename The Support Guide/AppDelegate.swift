@@ -94,10 +94,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         GMSPlacesClient.provideAPIKey("AIzaSyA0s1sqV20wmXHfso3aF1Zl9b2Skw53SsY")
        
-        Constants.isLive = false
+        Constants.isLive = true
         
         if Constants.isLive {
-            StripeAPI.defaultPublishableKey = "pk_live_51JplP2DbCahGDE6gsZHMLxyoOQePh7znNAUt84YuBmXjDyn0jVxIM1PosTmJczzVT7gqqNMhpd6Db4W2P0KkQdqC00bDOpOxV0"
+            StripeAPI.defaultPublishableKey = "pk_live_51NcpFgE6ndVM4uTYR4s8YjmSXweClBYH9QGmduqwtEQRWbdUGQX2Mq3oSri5CS72FYclyXzUhwfyfizD0dIcX3Y600syDqVdE3"
         }
         else {
             StripeAPI.defaultPublishableKey = "pk_test_51MxtoYFR1aAk6lQtMx13u63UQHm5dpGZfzYirN1xreBTF4cGi3lANngO1gDyGgrHDbMJTucYI3sHULXhFvvsp5QW00e7XjolYR"

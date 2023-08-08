@@ -1962,7 +1962,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gyk-vX-nuo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1193.8461538461538" y="2692.8909952606632"/>
+            <point key="canvasLocation" x="1318" y="2691"/>
         </scene>
         <!--Franchise Copy Email Password View Controller-->
         <scene sceneID="v2x-Wl-14m">
@@ -3650,7 +3650,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dnn-TR-Mz0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2064.6153846153848" y="2691.4691943127959"/>
+            <point key="canvasLocation" x="2051" y="2693"/>
         </scene>
         <!--Franchise Add Goals View Controller-->
         <scene sceneID="uIq-Xb-1qM">
@@ -3839,7 +3839,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5aw-W3-gbH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2803" y="2693"/>
+            <point key="canvasLocation" x="2842" y="2693"/>
         </scene>
         <!--Franchise Training View Controller-->
         <scene sceneID="eD6-DD-k8d">
@@ -4047,7 +4047,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Business" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4LG-sR-pwb">
-                                        <rect key="frame" x="63.999999999999993" y="15.666666666666666" width="104.33333333333331" height="22.666666666666679"/>
+                                        <rect key="frame" x="63.999999999999993" y="15.666666666666666" width="104.33333333333331" height="22.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -4374,6 +4374,7 @@
                         <outlet property="backBtn" destination="mZ1-CW-DES" id="8vW-we-xPK"/>
                         <outlet property="categoryTF" destination="fV9-ZM-Hqb" id="nnX-ob-Ool"/>
                         <outlet property="closingTime" destination="2bO-v6-a4H" id="dim-uV-8jN"/>
+                        <outlet property="deleteB2BBtn" destination="H6T-md-dbU" id="3vQ-8Z-fim"/>
                         <outlet property="fAbout" destination="sC9-Pm-omg" id="Wxd-IL-ICb"/>
                         <outlet property="fAddress" destination="al9-Rx-Lf2" id="Njd-zL-WUF"/>
                         <outlet property="fAddressTable" destination="hV6-5s-Vu9" id="txi-y7-ZbW"/>
@@ -4425,7 +4426,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Fundraiser" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVb-tI-rXx">
-                                        <rect key="frame" x="63.999999999999993" y="15.666666666666666" width="119.33333333333331" height="22.666666666666679"/>
+                                        <rect key="frame" x="63.999999999999993" y="15.666666666666666" width="119.33333333333331" height="22.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>

@@ -31,6 +31,7 @@ class HomeViewController : UIViewController {
     var locationManager : CLLocationManager!
     let radiusInM: Double = 2000 * 1000
     var b2bModels = Array<B2BModel>()
+   
     var i = 0
     override func viewDidLoad() {
         
@@ -60,6 +61,8 @@ class HomeViewController : UIViewController {
         }
         
         searchBtn.layer.cornerRadius = 8
+        searchBtn.isUserInteractionEnabled = true
+        searchBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(searchBtnClicked)))
         
         searchTF.delegate = self
         
@@ -116,6 +119,7 @@ class HomeViewController : UIViewController {
             authorizationStatus = CLLocationManager.authorizationStatus()
         }
 
+       
         
         switch authorizationStatus {
         case .authorizedWhenInUse,.authorizedAlways:
@@ -125,6 +129,26 @@ class HomeViewController : UIViewController {
             FirebaseStoreManager.db.collection("ERRORS").document(FirebaseStoreManager.auth.currentUser!.uid).setData(["date":Data(),"error":"LocationNotAuthorized"],merge: true)
         }
     }
+    
+    
+    @objc func searchBtnClicked(){
+        let sValue = searchTF.text
+        if let sValue = sValue, !sValue.isEmpty {
+            var models = Array<B2BModel>()
+            for model in b2bModels {
+                if model.name!.lowercased().contains(sValue.lowercased()) {
+                    models.append(model)
+                }
+            }
+            
+            performSegue(withIdentifier: "searchSeg", sender: models)
+            
+            
+        }
+        
+    }
+    
+
     
     func getAllBusinessByLocation(){
         
@@ -265,6 +289,13 @@ class HomeViewController : UIViewController {
             if let VC = segue.destination as? UserBusinessDetailsViewController {
                 if let b2bModel = sender as? B2BModel {
                     VC.b2bModel = b2bModel
+                }
+            }
+        }
+        else if segue.identifier == "searchSeg" {
+            if let VC = segue.destination as? SearchViewController {
+                if let models = sender as? Array<B2BModel> {
+                    VC.b2bModels = models
                 }
             }
         }

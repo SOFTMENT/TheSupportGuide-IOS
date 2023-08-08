@@ -116,6 +116,7 @@
 		5DA428442A1C9C3F009225A4 /* B2B.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DA428432A1C9C3F009225A4 /* B2B.storyboard */; };
 		5DA428462A1C9C4E009225A4 /* Sales.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DA428452A1C9C4E009225A4 /* Sales.storyboard */; };
 		5DA428482A1C9ED6009225A4 /* RecentlyAddedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA428472A1C9ED6009225A4 /* RecentlyAddedModel.swift */; };
+		5DC2E6E22A818E4600736AE3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC2E6E12A818E4600736AE3 /* SearchViewController.swift */; };
 		5DCFB1B92A274900007C2950 /* BusinessTrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFB1B82A274900007C2950 /* BusinessTrainingViewController.swift */; };
 		5DCFB1BB2A274B92007C2950 /* BusinessProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFB1BA2A274B92007C2950 /* BusinessProfileViewController.swift */; };
 		5DCFB1BD2A274D3A007C2950 /* BusinessEditVoucherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFB1BC2A274D3A007C2950 /* BusinessEditVoucherViewController.swift */; };
@@ -268,6 +269,7 @@
 		5DA428432A1C9C3F009225A4 /* B2B.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = B2B.storyboard; sourceTree = "<group>"; };
 		5DA428452A1C9C4E009225A4 /* Sales.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sales.storyboard; sourceTree = "<group>"; };
 		5DA428472A1C9ED6009225A4 /* RecentlyAddedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentlyAddedModel.swift; sourceTree = "<group>"; };
+		5DC2E6E12A818E4600736AE3 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		5DCFB1B82A274900007C2950 /* BusinessTrainingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessTrainingViewController.swift; sourceTree = "<group>"; };
 		5DCFB1BA2A274B92007C2950 /* BusinessProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessProfileViewController.swift; sourceTree = "<group>"; };
 		5DCFB1BC2A274D3A007C2950 /* BusinessEditVoucherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessEditVoucherViewController.swift; sourceTree = "<group>"; };
@@ -408,6 +410,7 @@
 				5D60ED5F2A3674B000F2B93A /* UserBusinessAllLocationViewController.swift */,
 				5D35217C2A3690A2005117CA /* UserViewVoucherController.swift */,
 				5D3521822A374506005117CA /* VoucherSuccessfulRedemeedViewController.swift */,
+				5DC2E6E12A818E4600736AE3 /* SearchViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -852,6 +855,7 @@
 				5D60ED602A3674B000F2B93A /* UserBusinessAllLocationViewController.swift in Sources */,
 				5D1090BE2A29F72A00622600 /* BusinessReportViewController.swift in Sources */,
 				5D966EC42A13A35E00B5A4C1 /* EditFranchiseViewController.swift in Sources */,
+				5DC2E6E22A818E4600736AE3 /* SearchViewController.swift in Sources */,
 				5D9F10AB2A09A27A00470D52 /* RedeemHistoryViewController.swift in Sources */,
 				5D33887F2A20D28000C01F7D /* FranchiseEditPipelineController.swift in Sources */,
 				5DFEF7A129F9E4F80041E0CA /* SceneDelegate.swift in Sources */,
@@ -1007,7 +1011,7 @@
 				CODE_SIGN_ENTITLEMENTS = "The Support Guide/The Support Guide.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = BF3K4AKAJ7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "The Support Guide/Info.plist";
@@ -1031,7 +1035,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.99;
+				MARKETING_VERSION = 2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.The-Support-Guide";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1053,7 +1057,7 @@
 				CODE_SIGN_ENTITLEMENTS = "The Support Guide/The Support Guide.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = BF3K4AKAJ7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "The Support Guide/Info.plist";
@@ -1077,7 +1081,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.99;
+				MARKETING_VERSION = 2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.The-Support-Guide";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
