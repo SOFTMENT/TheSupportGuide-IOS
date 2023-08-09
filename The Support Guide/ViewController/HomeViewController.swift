@@ -391,12 +391,16 @@ extension HomeViewController : CLLocationManagerDelegate {
         case .authorizedWhenInUse,.authorizedAlways:
             locationManager.startUpdatingLocation()
         default:
-            self.showToast(message: "Enable Location From Settings")
-            FirebaseStoreManager.db.collection("ERRORS").document(FirebaseStoreManager.auth.currentUser!.uid).setData(["date":Data(),"error":"LocationNotAuthorized"],merge: true)
+            Constants.clLocation =  CLLocation(latitude: 32.7218457, longitude: -97.31990839999999)
+            getAllBusinessByLocation()
+            //FirebaseStoreManager.db.collection("ERRORS").document(FirebaseStoreManager.auth.currentUser!.uid).setData(["date":Data(),"error":"LocationNotAuthorized"],merge: true)
         }
     }
     
-  
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        Constants.clLocation =  CLLocation(latitude: 32.7218457, longitude: -97.31990839999999)
+        getAllBusinessByLocation()
+    }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
  
        let userLocation = locations[0] as CLLocation
