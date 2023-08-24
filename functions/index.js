@@ -18,7 +18,7 @@
       });
             /* eslint-enable max-len */
 
-      admin.auth().setCustomUserClaims("FMOYHr1TPnT9YPEGJlnWdLCyQ6O2",
+      admin.auth().setCustomUserClaims("nrYBJuFnxfMO2Mv5aRJUWllwuTb2",
         {admin: true})
       .then(() => {
         console.log("WOW I AM ADMIN");
@@ -80,3 +80,16 @@
         }
       });
 
+
+
+   exports.deleteUser = functions
+      .runWith({
+        timeoutSeconds: 540,
+        memory: "2GB",
+      })
+      .https.onCall(async (data, context)=>{
+        if (!(context.auth && context.auth.token && context.auth.token.admin)) {
+          return {"response": "failed", "value": "permission denied"};
+        }
+        return admin.auth().deleteUser(data.uid);
+      });

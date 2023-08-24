@@ -131,6 +131,8 @@ class FranchiseDashboardViewController : UIViewController {
         }
     }
     
+    
+    
 }
 
 extension FranchiseDashboardViewController : UITableViewDelegate, UITableViewDataSource {
@@ -150,6 +152,12 @@ extension FranchiseDashboardViewController : UITableViewDelegate, UITableViewDat
             
           
             self.getB2bAndFundraiser(by: recentModel.uid ?? "123", franchiseId: FranchiseModel.data!.uid ?? "123", type: recentModel.type! == "b2b" ? "Businesses" : "Fundraisers") { businessModel, fundrasierModel, error in
+                
+                if error == error {
+                    self.recenAddedModels.remove(at: indexPath.row)
+                    self.tableView.reloadData()
+                }
+                else {
                     if let businessModel = businessModel{
                         if let path = businessModel.image , !path.isEmpty {
                             cell.mImage.sd_setImage(with: URL(string: path), placeholderImage: UIImage(named: "placeholder"))
@@ -180,6 +188,8 @@ extension FranchiseDashboardViewController : UITableViewDelegate, UITableViewDat
                     fundGest.fundraiserModel = fundrasierModel
                     cell.mView.addGestureRecognizer(fundGest)
                 }
+                }
+               
                 }
             
             return cell

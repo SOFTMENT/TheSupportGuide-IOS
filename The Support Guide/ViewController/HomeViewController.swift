@@ -125,8 +125,7 @@ class HomeViewController : UIViewController {
         case .authorizedWhenInUse,.authorizedAlways:
             locationManager.startUpdatingLocation()
         default:
-            self.showToast(message: "Enable Location From Settings")
-            FirebaseStoreManager.db.collection("ERRORS").document(FirebaseStoreManager.auth.currentUser!.uid).setData(["date":Data(),"error":"LocationNotAuthorized"],merge: true)
+            print("Enable Location")
         }
     }
     

@@ -476,7 +476,7 @@ extension UIViewController {
                paymentRequest.paymentSummaryItems = [
                    // The final line should represent your company;
                    // it'll be prepended with the word "Pay" (that is, "Pay iHats, Inc $50")
-                PKPaymentSummaryItem(label: "Premium Membership", amount: NSDecimalNumber(value: amount * 100)),
+                PKPaymentSummaryItem(label: "Pay The Support Guide", amount: NSDecimalNumber(value: amount)),
                ]
             
             if let applePayContext = STPApplePayContext(paymentRequest: paymentRequest, delegate: delegate) {

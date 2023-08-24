@@ -112,6 +112,14 @@ class FranchiseEditFundraiserViewController : UIViewController {
     func deleteFundraiser(){
         self.ProgressHUDShow(text: "Deleting...")
         
+        lazy var functions = Functions.functions()
+        
+        functions.httpsCallable("deleteUser").call([fundraiserModel!.uid ?? "123"]) { result, error in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+        
         FirebaseStoreManager.db.collection("Fundraisers").document(fundraiserModel!.uid ?? "123").collection("Goals").getDocuments { snapshot, error in
             
             if let snapshot = snapshot, !snapshot.isEmpty {
@@ -131,6 +139,7 @@ class FranchiseEditFundraiserViewController : UIViewController {
         FirebaseStoreManager.db.collection("Fundraisers").document(fundraiserModel!.uid ?? "123").collection("Members").getDocuments { snapshot, error in
             let batch = FirebaseStoreManager.db.batch()
             batch.deleteDocument(FirebaseStoreManager.db.collection("Fundraisers").document(self.fundraiserModel!.uid ?? "123"))
+            batch.deleteDocument(FirebaseStoreManager.db.collection("Franchises").document(FranchiseModel.data!.uid ?? "123").collection("Recents").document(self.fundraiserModel!.uid ?? "123"))
      
             if let snapshot = snapshot, !snapshot.isEmpty {
          

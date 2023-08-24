@@ -10,6 +10,7 @@ import CropViewController
 import CoreLocation
 import GeoFire
 import PassKit
+import FirebaseFunctions
 
 class FranchiseEditBusinessController : UIViewController {
     
@@ -172,6 +173,15 @@ class FranchiseEditBusinessController : UIViewController {
     func deleteB2B(){
         self.ProgressHUDShow(text: "Deleting...")
         
+
+        lazy var functions = Functions.functions()
+        
+        functions.httpsCallable("deleteUser").call(["uid" : b2bModel!.uid ?? "123"]) { result, error in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+        
         FirebaseStoreManager.db.collection("Businesses").document(b2bModel!.uid ?? "123").collection("Vouchers").getDocuments { snapshot, error in
             
             if let snapshot = snapshot, !snapshot.isEmpty {
@@ -205,6 +215,8 @@ class FranchiseEditBusinessController : UIViewController {
             batch.deleteDocument(FirebaseStoreManager.db.collection("Businesses").document(self.b2bModel!.uid ?? "123"))
             batch.deleteDocument(FirebaseStoreManager.db.collection("Businesses").document(self.b2bModel!.uid ?? "123").collection("Owner").document(self.b2bModel!.uid ?? "123"))
      
+            batch.deleteDocument(FirebaseStoreManager.db.collection("Franchises").document(FranchiseModel.data!.uid ?? "123").collection("Recents").document(self.b2bModel!.uid ?? "123"))
+            
             if let snapshot = snapshot, !snapshot.isEmpty {
          
                 for qdr in snapshot.documents {
