@@ -25,7 +25,7 @@ class SignInViewController : UIViewController {
     
     @IBOutlet weak var gmailBtn: UIView!
     @IBOutlet weak var appleBtn: UIView!
-    @IBOutlet weak var facebookBtn: UIView!
+    
   
     @IBOutlet weak var registerNowBtn: UILabel!
     @IBOutlet weak var remeberMeCheck: UIButton!
@@ -41,7 +41,7 @@ class SignInViewController : UIViewController {
         
         loginBtn.layer.cornerRadius = 8
         gmailBtn.layer.cornerRadius = 12
-        facebookBtn.layer.cornerRadius = 12
+        //facebookBtn.layer.cornerRadius = 12
         appleBtn.layer.cornerRadius = 12
         
         //RESET PASSWORD
@@ -60,10 +60,10 @@ class SignInViewController : UIViewController {
         appleBtn.isUserInteractionEnabled = true
         appleBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(loginWithAppleBtnClicked)))
         
-        //FacebookClicked
-        facebookBtn.isUserInteractionEnabled = true
-        facebookBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(loginWithFacebookClicked)))
-        
+//        //FacebookClicked
+//        facebookBtn.isUserInteractionEnabled = true
+//        facebookBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(loginWithFacebookClicked)))
+//
        
         view.isUserInteractionEnabled = true
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hidekeyboard)))

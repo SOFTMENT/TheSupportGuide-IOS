@@ -332,10 +332,10 @@ Communities Support One Another.</string>
                                                 <rect key="frame" x="20" y="518.33333333333337" width="390" height="50"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qdG-vc-Z0S">
-                                                        <rect key="frame" x="0.0" y="0.0" width="122" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="189" height="50"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="google-4" translatesAutoresizingMaskIntoConstraints="NO" id="eAK-aa-6jZ">
-                                                                <rect key="frame" x="50" y="13" width="22" height="24"/>
+                                                                <rect key="frame" x="83.666666666666671" y="13" width="22" height="24"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="24" id="Jho-hN-6Ed"/>
                                                                     <constraint firstAttribute="width" constant="22" id="uNa-hW-x3K"/>
@@ -350,10 +350,10 @@ Communities Support One Another.</string>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hm1-mV-2sH">
-                                                        <rect key="frame" x="134" y="0.0" width="122" height="50"/>
+                                                        <rect key="frame" x="201" y="0.0" width="189" height="50"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apple-logo-4" translatesAutoresizingMaskIntoConstraints="NO" id="Kbk-nY-zhr">
-                                                                <rect key="frame" x="50" y="13" width="22" height="24"/>
+                                                                <rect key="frame" x="83.666666666666686" y="13" width="22" height="24"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="24" id="qP1-wN-ei0"/>
                                                                     <constraint firstAttribute="width" constant="22" id="wCa-BY-2bY"/>
@@ -365,24 +365,6 @@ Communities Support One Another.</string>
                                                             <constraint firstItem="Kbk-nY-zhr" firstAttribute="centerY" secondItem="hm1-mV-2sH" secondAttribute="centerY" id="X2r-H7-FzC"/>
                                                             <constraint firstItem="Kbk-nY-zhr" firstAttribute="centerX" secondItem="hm1-mV-2sH" secondAttribute="centerX" id="p53-sR-oow"/>
                                                             <constraint firstAttribute="height" constant="50" id="t66-Qf-Wpa"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kD5-PE-R5s">
-                                                        <rect key="frame" x="268" y="0.0" width="122" height="50"/>
-                                                        <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook-app-symbol-3" translatesAutoresizingMaskIntoConstraints="NO" id="wEF-ei-CeG">
-                                                                <rect key="frame" x="50" y="13" width="22" height="24"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="22" id="4HE-rQ-kmX"/>
-                                                                    <constraint firstAttribute="height" constant="24" id="uZd-H9-Gl5"/>
-                                                                </constraints>
-                                                            </imageView>
-                                                        </subviews>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.94047619049999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="7sF-lB-LIA"/>
-                                                            <constraint firstItem="wEF-ei-CeG" firstAttribute="centerX" secondItem="kD5-PE-R5s" secondAttribute="centerX" id="fWU-Eh-vjo"/>
-                                                            <constraint firstItem="wEF-ei-CeG" firstAttribute="centerY" secondItem="kD5-PE-R5s" secondAttribute="centerY" id="gaJ-Fw-yQi"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -499,7 +481,6 @@ Communities Support One Another.</string>
                         <outlet property="appleBtn" destination="hm1-mV-2sH" id="NNT-3k-olx"/>
                         <outlet property="backView" destination="dSu-3X-nPc" id="l8e-Lf-Wd9"/>
                         <outlet property="emailAddress" destination="bKq-M2-73p" id="9f4-5A-Ffb"/>
-                        <outlet property="facebookBtn" destination="kD5-PE-R5s" id="wsr-JZ-Wmc"/>
                         <outlet property="forgotPassword" destination="j5R-VN-aWR" id="lfV-dX-K7J"/>
                         <outlet property="gmailBtn" destination="qdG-vc-Z0S" id="wOm-iY-i8f"/>
                         <outlet property="loginBtn" destination="WOT-Rf-ad4" id="Mug-OJ-xlX"/>
@@ -1361,7 +1342,7 @@ Communities Support One Another.</string>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Near shiv shree cinema, totalaa marg tarana dist- ujjain" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="id8-Pp-gNq">
-                                                                            <rect key="frame" x="133" y="31.666666666666668" width="229" height="33.666666666666643"/>
+                                                                            <rect key="frame" x="133" y="31.666666666666668" width="229" height="33.666666666666657"/>
                                                                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                                                             <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
@@ -1771,7 +1752,7 @@ Communities Support One Another.</string>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Near shiv shree cinema, totalaa marg tarana dist- ujjain" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2I-Zx-A71">
-                                                                                            <rect key="frame" x="133" y="31.666666666666668" width="229" height="33.666666666666643"/>
+                                                                                            <rect key="frame" x="133" y="31.666666666666668" width="229" height="33.666666666666657"/>
                                                                                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                             <nil key="highlightedColor"/>
@@ -3251,7 +3232,7 @@ Communities Support One Another.</string>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Near shiv shree cinema, totalaa marg tarana dist- ujjain" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pob-LC-ZkN">
-                                                                            <rect key="frame" x="133" y="31.666666666666668" width="229" height="33.666666666666643"/>
+                                                                            <rect key="frame" x="133" y="31.666666666666668" width="229" height="33.666666666666657"/>
                                                                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                                                             <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
@@ -5081,7 +5062,7 @@ Communities Support One Another.</string>
     <inferredMetricsTieBreakers>
         <segue reference="KzP-Oz-fKm"/>
         <segue reference="2ep-Cb-1i2"/>
-        <segue reference="rYT-7p-8Xf"/>
+        <segue reference="pEl-V2-9Bd"/>
         <segue reference="r4g-tf-KXw"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -5096,7 +5077,6 @@ Communities Support One Another.</string>
         <image name="chevron.forward" catalog="system" width="97" height="128"/>
         <image name="chevron.right" catalog="system" width="97" height="128"/>
         <image name="crown" width="64" height="64"/>
-        <image name="facebook-app-symbol-3" width="64" height="64"/>
         <image name="filemenu.and.cursorarrow" catalog="system" width="128" height="97"/>
         <image name="flag" catalog="system" width="128" height="121"/>
         <image name="google-4" width="64" height="64"/>

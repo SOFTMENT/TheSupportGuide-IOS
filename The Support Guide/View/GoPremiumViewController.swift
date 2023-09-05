@@ -16,6 +16,7 @@ class GoPremiumViewController: UIViewController {
     @IBOutlet weak var privacyPolicy: UILabel!
     @IBOutlet weak var appleCheck: UIButton!
     @IBOutlet weak var creditDebitCheck: UIButton!
+    @IBOutlet weak var tipMainView: UIView!
     
     @IBOutlet weak var dPrice: UILabel!
     @IBOutlet weak var donationFeeView: UIView!
@@ -39,6 +40,19 @@ class GoPremiumViewController: UIViewController {
         activateBtn.layer.cornerRadius = 8
         animation.loopMode = .loop
         animation.play()
+        
+        let dateFormatter = DateFormatter()
+           dateFormatter.dateFormat = "yyyy-MM-dd"
+           dateFormatter.timeZone = TimeZone.current
+           dateFormatter.locale = Locale.current
+        if let finalDate =  dateFormatter.date(from: "2023-09-07") {
+            if finalDate > Date() {
+                tipMainView.isHidden = true
+            }
+        }
+            
+            
+        
         
         // Do any additional setup after loading the view.
     }
