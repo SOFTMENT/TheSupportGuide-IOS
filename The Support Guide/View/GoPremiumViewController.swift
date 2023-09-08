@@ -45,7 +45,7 @@ class GoPremiumViewController: UIViewController {
            dateFormatter.dateFormat = "yyyy-MM-dd"
            dateFormatter.timeZone = TimeZone.current
            dateFormatter.locale = Locale.current
-        if let finalDate =  dateFormatter.date(from: "2023-09-07") {
+        if let finalDate =  dateFormatter.date(from: "2023-09-09") {
             if finalDate > Date() {
                 tipMainView.isHidden = true
             }
