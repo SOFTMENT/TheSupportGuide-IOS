@@ -249,9 +249,9 @@ class CreateProfileViewController : UIViewController {
                               }
                            }
                         }
-                            else {
-                                self.handleApplePay(amount: total, delegate: self)
-                            }
+                        else {
+                            self.handleApplePay(amount: total, delegate: self)
+                        }
                     }
             
                 }
