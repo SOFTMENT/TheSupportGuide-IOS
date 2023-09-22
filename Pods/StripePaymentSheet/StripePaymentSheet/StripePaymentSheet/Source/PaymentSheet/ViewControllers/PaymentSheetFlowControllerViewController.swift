@@ -14,9 +14,9 @@ import Foundation
 import UIKit
 
 protocol PaymentSheetFlowControllerViewControllerDelegate: AnyObject {
-    func PaymentSheetFlowControllerViewControllerShouldClose(
+    func paymentSheetFlowControllerViewControllerShouldClose(
         _ PaymentSheetFlowControllerViewController: PaymentSheetFlowControllerViewController)
-    func PaymentSheetFlowControllerViewControllerDidUpdateSelection(
+    func paymentSheetFlowControllerViewControllerDidUpdateSelection(
         _ PaymentSheetFlowControllerViewController: PaymentSheetFlowControllerViewController)
 }
 
@@ -141,7 +141,7 @@ class PaymentSheetFlowControllerViewController: UIViewController {
             case .applePay, .saved, .link:
                 // TODO(Link): Handle link when we re-enable it
                 return nil
-            case .new(confirmParams: let params):
+            case .new(confirmParams: let params), .externalPayPal(let params):
                 return params
             }
         }()
@@ -157,7 +157,7 @@ class PaymentSheetFlowControllerViewController: UIViewController {
                 customerID: configuration.customer?.id,
                 showApplePay: isApplePayEnabled,
                 showLink: isLinkEnabled,
-                autoSelectDefaultBehavior: intent.supportsLink ? .onlyIfMatched : .defaultFirst
+                removeSavedPaymentMethodMessage: configuration.removeSavedPaymentMethodMessage
             ),
             appearance: configuration.appearance
         )
@@ -396,14 +396,15 @@ class PaymentSheetFlowControllerViewController: UIViewController {
 
     @objc
     private func didTapAddButton() {
+        STPAnalyticsClient.sharedClient.logPaymentSheetEvent(event: .paymentSheetConfirmButtonTapped)
         switch mode {
         case .selectingSaved:
-            self.delegate?.PaymentSheetFlowControllerViewControllerShouldClose(self)
+            self.delegate?.paymentSheetFlowControllerViewControllerShouldClose(self)
         case .addingNew:
             if let buyButtonOverrideBehavior = addPaymentMethodViewController.overrideBuyButtonBehavior {
                 addPaymentMethodViewController.didTapCallToActionButton(behavior: buyButtonOverrideBehavior, from: self)
             } else {
-                self.delegate?.PaymentSheetFlowControllerViewControllerShouldClose(self)
+                self.delegate?.paymentSheetFlowControllerViewControllerShouldClose(self)
             }
         }
 
@@ -411,7 +412,7 @@ class PaymentSheetFlowControllerViewController: UIViewController {
 
     func didDismiss() {
         // If the customer was adding a new payment method and it's incomplete/invalid, return to the saved PM screen
-        delegate?.PaymentSheetFlowControllerViewControllerShouldClose(self)
+        delegate?.paymentSheetFlowControllerViewControllerShouldClose(self)
         if savedPaymentOptionsViewController.isRemovingPaymentMethods {
             savedPaymentOptionsViewController.isRemovingPaymentMethods = false
             configureEditSavedPaymentMethodsButton()
@@ -458,10 +459,10 @@ extension PaymentSheetFlowControllerViewController: SavedPaymentOptionsViewContr
             error = nil // Clear any errors
             updateUI()
         case .applePay, .link, .saved:
-            delegate?.PaymentSheetFlowControllerViewControllerDidUpdateSelection(self)
+            delegate?.paymentSheetFlowControllerViewControllerDidUpdateSelection(self)
             updateUI()
             if isDismissable, !selectedPaymentMethodType.requiresMandateDisplayForSavedSelection {
-                delegate?.PaymentSheetFlowControllerViewControllerShouldClose(self)
+                delegate?.paymentSheetFlowControllerViewControllerShouldClose(self)
             }
         }
     }
@@ -519,24 +520,7 @@ extension PaymentSheetFlowControllerViewController: SavedPaymentOptionsViewContr
 extension PaymentSheetFlowControllerViewController: AddPaymentMethodViewControllerDelegate {
     func didUpdate(_ viewController: AddPaymentMethodViewController) {
         error = nil  // clear error
-
-        if case .link(let linkOption) = selectedPaymentOption,
-           let linkAccount = linkOption.account,
-           linkAccount.sessionState == .requiresVerification {
-            isVerificationInProgress = true
-            updateUI()
-
-            let verificationController = LinkVerificationController(mode: .inlineLogin, linkAccount: linkAccount)
-            verificationController.present(from: self, completion: { [weak self] _ in
-                // Verification result is ignored here on purpose. If verification is canceled or fails,
-                // we will simply don't block the payment. This will be revised after we redesign the inline
-                // signup UI to include verification status.
-                self?.isVerificationInProgress = false
-                self?.updateUI()
-            })
-        } else {
-            updateUI()
-        }
+        updateUI()
     }
 
     func shouldOfferLinkSignup(_ viewController: AddPaymentMethodViewController) -> Bool {

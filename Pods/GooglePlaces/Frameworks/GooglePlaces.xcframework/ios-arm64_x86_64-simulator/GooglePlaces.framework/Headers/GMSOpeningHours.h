@@ -9,6 +9,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GMSPlaceSpecialDay.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -27,6 +28,38 @@ typedef NS_ENUM(NSInteger, GMSOpenNowStatus) {
 
   /** Whether the place is open now is unknown. */
   GMSOpenNowStatusUnknown,
+};
+
+/**@}*/
+
+/**
+ * \defgroup PlaceHoursType GMSPlaceHoursType
+ * @{
+ */
+
+/**
+ * Identifies the type of secondary opening hours.
+ *
+ * |GMSPlaceHoursType| is only set for secondary opening hours (i.e. opening hours
+ * returned from |GMSPlace| secondaryOpeningHours).
+ * Place hours types described here:
+ * https://developers.google.com/maps/documentation/places/web-service/details#PlaceOpeningHours-type
+ */
+typedef NS_ENUM(NSInteger, GMSPlaceHoursType) {
+  GMSPlaceHoursTypeAccess,
+  GMSPlaceHoursTypeBreakfast,
+  GMSPlaceHoursTypeBrunch,
+  GMSPlaceHoursTypeLunch,
+  GMSPlaceHoursTypeDinner,
+  GMSPlaceHoursTypeSeniorHours,
+  GMSPlaceHoursTypePickup,
+  GMSPlaceHoursTypeTakeout,
+  GMSPlaceHoursTypeDelivery,
+  GMSPlaceHoursTypeKitchen,
+  GMSPlaceHoursTypeOnlineServiceHours,
+  GMSPlaceHoursTypeDriveThrough,
+  GMSPlaceHoursTypeHappyHour,
+  GMSPlaceHoursTypeUnknown
 };
 
 /**@}*/
@@ -114,6 +147,16 @@ typedef NS_ENUM(NSUInteger, GMSDayOfWeek) {
  */
 @property(nullable, nonatomic, readonly, strong) NSArray<NSString *> *weekdayText;
 
+/**
+ * Returns the |GMSPlaceHoursType| of the opening hours.
+ */
+@property(nonatomic, readonly) GMSPlaceHoursType hoursType;
+
+/**
+ * Returns a list of |GMSPlaceSpecialDay| entries, corresponding to the next
+ * seven days which may have opening hours that differ from the normal operating hours.
+ */
+@property(nonatomic, copy, readonly, nullable) NSArray<GMSPlaceSpecialDay *> *specialDays;
 @end
 
 NS_ASSUME_NONNULL_END

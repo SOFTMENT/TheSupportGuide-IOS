@@ -77,7 +77,6 @@ public class STPBankAccountCollector: NSObject {
     ///   - completion:        Completion block to be called on completion of the operation.
     ///                        Upon success, the `STPPaymentIntent` instance will have an
     ///                        expanded `paymentMethod` containing detailed payment method information
-    @available(iOS 12, *)
     @objc(collectBankAccountForPaymentWithClientSecret:params:from:completion:)
     public func collectBankAccountForPayment(
         clientSecret: String,
@@ -104,7 +103,6 @@ public class STPBankAccountCollector: NSObject {
     ///   - completion:        Completion block to be called on completion of the operation.
     ///                        Upon success, the `STPPaymentIntent` instance will have an
     ///                        expanded `paymentMethod` containing detailed payment method information
-    @available(iOS 12, *)
     @objc(collectBankAccountForPaymentWithClientSecret:returnURL:params:from:completion:)
     public func collectBankAccountForPayment(
         clientSecret: String,
@@ -277,7 +275,6 @@ public class STPBankAccountCollector: NSObject {
     ///   - completion:        Completion block to be called on completion of the operation.
     ///                        Upon success, the `STPSetupIntent` instance will have an
     ///                        expanded `paymentMethod` containing detailed payment method information
-    @available(iOS 12, *)
     @objc(collectBankAccountForSetupWithClientSecret:params:from:completion:)
     public func collectBankAccountForSetup(
         clientSecret: String,
@@ -304,7 +301,6 @@ public class STPBankAccountCollector: NSObject {
     ///   - completion:        Completion block to be called on completion of the operation.
     ///                        Upon success, the `STPSetupIntent` instance will have an
     ///                        expanded `paymentMethod` containing detailed payment method information
-    @available(iOS 12, *)
     @objc(collectBankAccountForSetupWithClientSecret:returnURL:params:from:completion:)
     public func collectBankAccountForSetup(
         clientSecret: String,
@@ -457,6 +453,51 @@ public class STPBankAccountCollector: NSObject {
                 return
             }
             completion(setupIntent, nil)
+        }
+    }
+
+    // MARK: - Collect Bank Account - Deferred Intent
+    @_spi(STP) public func collectBankAccountForDeferredIntent(
+        sessionId: String,
+        returnURL: String?,
+        amount: Int?,
+        currency: String?,
+        onBehalfOf: String?,
+        from viewController: UIViewController,
+        financialConnectionsCompletion: @escaping (
+            FinancialConnectionsSDKResult?, LinkAccountSession?, NSError?
+        ) -> Void
+    ) {
+        guard
+            let financialConnectionsAPI = FinancialConnectionsSDKAvailability.financialConnections()
+        else {
+            assertionFailure("FinancialConnections SDK has not been linked into your project")
+            financialConnectionsCompletion(nil, nil, error(for: .financialConnectionsSDKNotLinked))
+            return
+        }
+
+        apiClient.createLinkAccountSessionForDeferredIntent(
+            sessionId: sessionId,
+            amount: amount,
+            currency: currency,
+            onBehalfOf: onBehalfOf
+        ) { linkAccountSession, error in
+            if let error = error {
+                financialConnectionsCompletion(nil, nil, self.error(for: .unexpectedError, userInfo: [NSUnderlyingErrorKey: error]))
+                return
+            }
+            guard let linkAccountSession = linkAccountSession else {
+                financialConnectionsCompletion(nil, nil, NSError.stp_genericFailedToParseResponseError())
+                return
+            }
+            financialConnectionsAPI.presentFinancialConnectionsSheet(
+                apiClient: self.apiClient,
+                clientSecret: linkAccountSession.clientSecret,
+                returnURL: returnURL,
+                from: viewController
+            ) { result in
+                financialConnectionsCompletion(result, linkAccountSession, nil)
+            }
         }
     }
 }

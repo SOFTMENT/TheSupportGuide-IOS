@@ -21,7 +21,7 @@ final class USBankAccountPaymentMethodElement: Element {
     }
     var mandateString: NSMutableAttributedString?
 
-    private let configuration: PaymentSheet.Configuration
+    private let configuration: PaymentSheetFormFactoryConfig
     private let merchantName: String
     private let formElement: FormElement
     private let bankInfoSectionElement: SectionElement
@@ -31,7 +31,7 @@ final class USBankAccountPaymentMethodElement: Element {
     private let theme: ElementsUITheme
     private var linkedBank: LinkedBank? {
         didSet {
-            self.mandateString = Self.attributedMandateText(for: linkedBank, merchantName: merchantName, isSaving: savingAccount.value, theme: theme)
+            self.mandateString = Self.attributedMandateText(for: linkedBank, merchantName: merchantName, isSaving: savingAccount.value, configuration: configuration, theme: theme)
         }
     }
 
@@ -44,12 +44,13 @@ final class USBankAccountPaymentMethodElement: Element {
     }
 
     private static let links: [String: URL] = [
-        "terms": URL(string: "https://stripe.com/legal/ach-payments/authorization")!
+        "terms": URL(string: "https://stripe.com/legal/ach-payments/authorization")!,
     ]
 
     static let ContinueMandateText: String = STPLocalizedString("By continuing, you agree to authorize payments pursuant to <terms>these terms</terms>.", "Text providing link to terms for ACH payments")
     static let SaveAccountMandateText: String = STPLocalizedString("By saving your bank account for %@ you agree to authorize payments pursuant to <terms>these terms</terms>.", "Mandate text with link to terms when saving a bank account payment method to a merchant (merchant name replaces %@).")
     static let MicrodepositCopy: String = STPLocalizedString("Stripe will deposit $0.01 to your account in 1-2 business days. Then you’ll get an email with instructions to complete payment to %@.", "Prompt for microdeposit verification before completing purchase with merchant. %@ will be replaced by merchant business name")
+    static let MicrodepositCopy_CustomerSheet: String = STPLocalizedString("Stripe will deposit $0.01 to your account in 1-2 business days. Then you'll get an email with instructions to finish saving your bank account with %@.", "Prompt for microdeposit verification before completing saving payment method with merchant. %@ will be replaced by merchant business name")
 
     var canLinkAccount: Bool {
         let params = self.formElement.updateParams(params: IntentConfirmParams(type: .USBankAccount))
@@ -79,7 +80,7 @@ final class USBankAccountPaymentMethodElement: Element {
     }
 
     init(
-        configuration: PaymentSheet.Configuration,
+        configuration: PaymentSheetFormFactoryConfig,
         titleElement: StaticElement,
         nameElement: PaymentMethodElement?,
         emailElement: PaymentMethodElement?,
@@ -134,7 +135,7 @@ final class USBankAccountPaymentMethodElement: Element {
             guard let self = self else {
                 return
             }
-            self.mandateString = Self.attributedMandateText(for: self.linkedBank, merchantName: merchantName, isSaving: value, theme: theme)
+            self.mandateString = Self.attributedMandateText(for: self.linkedBank, merchantName: merchantName, isSaving: value, configuration: configuration, theme: theme)
             self.delegate?.didUpdate(element: self)
         }
     }
@@ -149,17 +150,23 @@ final class USBankAccountPaymentMethodElement: Element {
         }
         self.delegate?.didUpdate(element: self)
     }
+    func getLinkedBank() -> LinkedBank? {
+        return linkedBank
+    }
 
     class func attributedMandateText(for linkedBank: LinkedBank?,
                                      merchantName: String,
                                      isSaving: Bool,
+                                     configuration: PaymentSheetFormFactoryConfig,
                                      theme: ElementsUITheme = .default) -> NSMutableAttributedString? {
         guard let linkedBank = linkedBank else {
             return nil
         }
 
         var mandateText = isSaving ? String(format: Self.SaveAccountMandateText, merchantName) : Self.ContinueMandateText
-        if !linkedBank.instantlyVerified {
+        if case .customerSheet = configuration, !linkedBank.instantlyVerified {
+            mandateText =  String.init(format: Self.MicrodepositCopy_CustomerSheet, merchantName) + "\n" + mandateText
+        } else if case .paymentSheet = configuration, !linkedBank.instantlyVerified {
             mandateText =  String.init(format: Self.MicrodepositCopy, merchantName) + "\n" + mandateText
         }
         let formattedString = applyLinksToString(template: mandateText, links: links)
@@ -234,26 +241,6 @@ extension USBankAccountPaymentMethodElement: BankAccountInfoViewDelegate {
 }
 
 extension USBankAccountPaymentMethodElement: PaymentMethodElement {
-    func applyDefaults(params: IntentConfirmParams) -> IntentConfirmParams {
-        guard configuration.billingDetailsCollectionConfiguration.attachDefaultsToPaymentMethod else {
-            return params
-        }
-        if let name = configuration.defaultBillingDetails.name {
-            params.paymentMethodParams.nonnil_billingDetails.name = name
-        }
-        if let email = configuration.defaultBillingDetails.email {
-            params.paymentMethodParams.nonnil_billingDetails.email = email
-        }
-        if let phone = configuration.defaultBillingDetails.phone {
-            params.paymentMethodParams.nonnil_billingDetails.phone = phone
-        }
-        if configuration.defaultBillingDetails.address != .init() {
-            params.paymentMethodParams.nonnil_billingDetails.address =
-                STPPaymentMethodAddress(address: configuration.defaultBillingDetails.address)
-        }
-        return params
-    }
-
     func updateParams(params: IntentConfirmParams) -> IntentConfirmParams? {
         if let updatedParams = self.formElement.updateParams(params: params),
            let linkedBank = linkedBank {

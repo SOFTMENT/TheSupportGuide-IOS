@@ -22,14 +22,22 @@ extension PaymentSheetFormFactory {
         )
         let shouldDisplaySaveCheckbox: Bool = saveMode == .userSelectable && !canSaveToLink
 
-        // Link can't collect phone.
-        let includePhone = !configuration.linkPaymentMethodsOnly
-            && configuration.billingDetailsCollectionConfiguration.phone == .always
-
-        let contactInformationSection = makeContactInformation(
-            includeName: false, // Name is included in the card details section.
-            includeEmail: configuration.billingDetailsCollectionConfiguration.email == .always,
-            includePhone: includePhone)
+        // Make section titled "Contact Information" w/ phone and email if merchant requires it.
+        let optionalPhoneAndEmailInformationSection: SectionElement? = {
+            let emailElement: Element? = configuration.billingDetailsCollectionConfiguration.email == .always ? makeEmail() : nil
+            // Link can't collect phone.
+            let shouldIncludePhone = !configuration.linkPaymentMethodsOnly && configuration.billingDetailsCollectionConfiguration.phone == .always
+            let phoneElement: Element? = shouldIncludePhone ? makePhone() : nil
+            let contactInformationElements = [emailElement, phoneElement].compactMap { $0 }
+            guard !contactInformationElements.isEmpty else {
+                return nil
+            }
+            return SectionElement(
+                title: .Localized.contact_information,
+                elements: contactInformationElements,
+                theme: theme
+            )
+        }()
 
         let previousCardInput = previousCustomerInput?.paymentMethodParams.card
         let formattedExpiry: String? = {
@@ -62,7 +70,7 @@ extension PaymentSheetFormFactory {
             }
         }()
 
-        let phoneElement = contactInformationSection?.elements.compactMap {
+        let phoneElement = optionalPhoneAndEmailInformationSection?.elements.compactMap {
             $0 as? PaymentMethodElementWrapper<PhoneNumberElement>
         }.first
 
@@ -73,24 +81,23 @@ extension PaymentSheetFormFactory {
 
         let cardFormElement = FormElement(
             elements: [
-                contactInformationSection,
+                optionalPhoneAndEmailInformationSection,
                 cardSection,
                 billingAddressSection,
                 shouldDisplaySaveCheckbox ? saveCheckbox : nil,
             ],
             theme: theme)
-        let cardFormElementWrapper = makeDefaultsApplierWrapper(for: cardFormElement)
 
-        if isLinkEnabled {
+        if case .paymentSheet(let configuration) = configuration, isLinkEnabled {
             return LinkEnabledPaymentMethodElement(
                 type: .card,
-                paymentMethodElement: cardFormElementWrapper,
+                paymentMethodElement: cardFormElement,
                 configuration: configuration,
                 linkAccount: linkAccount,
-                country: intent.countryCode
+                country: countryCode
             )
         } else {
-            return cardFormElementWrapper
+            return cardFormElement
         }
     }
 }

@@ -7,24 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0CD66DB620B6661F1EF6665A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0589812EE1F702A7BBA34D /* main.m */; };
-		11B0770FDB10317396772FF4 /* AutocompleteWithSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7419DDC82CA074FF0A508C /* AutocompleteWithSearchViewController.m */; };
-		3836B4BAF22DC69481A763C6 /* FindPlaceLikelihoodListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AE29BAB2CC24B015F7754A /* FindPlaceLikelihoodListViewController.m */; };
-		392FC92D8B566E346E88DCBA /* DemoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B81B9326DD5B37C08B8CCAA /* DemoAppDelegate.m */; };
-		3D98F2BBEF62785171F84182 /* AutocompleteBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E6E2A1285D9A0BEBDCD503 /* AutocompleteBaseViewController.m */; };
-		4B998C75A942D73EB0D61DA5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D344C64A66F10D55590797E /* Localizable.strings */; };
-		5075D7C43A46E44872F24CD6 /* AutocompleteWithTextFieldController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB9E4A950DB2EA454486E47 /* AutocompleteWithTextFieldController.m */; };
-		52EEC38B8E272054E666B986 /* AutocompletePushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BAEA89ED8C397E73E2E9730 /* AutocompletePushViewController.m */; };
-		7A46846201F9524E7D5AEA28 /* DemoSceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F016F9B050CDC347357EB3F /* DemoSceneDelegate.m */; };
-		941E6ABEE44140E5082343AE /* AutocompleteWithCustomColors.m in Sources */ = {isa = PBXBuildFile; fileRef = FC03FEE150596E9432F612DF /* AutocompleteWithCustomColors.m */; };
-		98F81E82D94C6D2274795F99 /* PlacesDemoAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85EDEFE42680FF093454D1AB /* PlacesDemoAssets.xcassets */; };
-		9961132B60CA522AA53FF0B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F65D01DD8887E3B1B9731DAE /* LaunchScreen.storyboard */; };
-		9D39BA183CC8EF9681F42003 /* DemoData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2203BCCE0CFC3DC4F38B30 /* DemoData.m */; };
+		0CD6473D3B603BAF22D49E3B /* DemoData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2203BCCE0CFC3DC4F38B30 /* DemoData.m */; };
+		1116F9F0B67150BB9EEA91A2 /* AutocompleteWithSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7419DDC82CA074FF0A508C /* AutocompleteWithSearchViewController.m */; };
+		1304590E4181B16AF9375209 /* DemoSceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F016F9B050CDC347357EB3F /* DemoSceneDelegate.m */; };
+		31D6B2E5F98EAFB617CD06F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F65D01DD8887E3B1B9731DAE /* LaunchScreen.storyboard */; };
+		509F7BAD46CC0A378DAADF5A /* FindPlaceLikelihoodListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AE29BAB2CC24B015F7754A /* FindPlaceLikelihoodListViewController.m */; };
+		89695382034652B26F0F04B9 /* AutocompletePushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BAEA89ED8C397E73E2E9730 /* AutocompletePushViewController.m */; };
+		8BA42AEFAD2EA0C45905EEC9 /* PagingPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21153EB819432638638C2C26 /* PagingPhotoView.m */; };
+		A202FFF423560E9EB6887FBF /* AutocompleteBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E6E2A1285D9A0BEBDCD503 /* AutocompleteBaseViewController.m */; };
 		A2EE0081C3FF6E60DA48008E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97ADBE3D50D731A88C24F3F0 /* UIKit.framework */; };
-		A454A2BEF2C946696364B4BD /* DemoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C753B6637575A8CD81C699 /* DemoListViewController.m */; };
-		AFAA1D29FCFA27FD1F6C49DA /* AutocompleteModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1502E6F1A86B1773138153B /* AutocompleteModalViewController.m */; };
-		DBDD7ECF98957E732F60B1CD /* BaseDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D4BD9841268F97FD23E770 /* BaseDemoViewController.m */; };
-		E2A8F8C664AFE8282FA2241C /* PagingPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21153EB819432638638C2C26 /* PagingPhotoView.m */; };
+		AE85226515D9C6FF5C65E063 /* PlacesDemoAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85EDEFE42680FF093454D1AB /* PlacesDemoAssets.xcassets */; };
+		BA37D7F119D6FDA76033E5C0 /* DemoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C753B6637575A8CD81C699 /* DemoListViewController.m */; };
+		BD6A761F2C619599C7CE59E4 /* DemoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B81B9326DD5B37C08B8CCAA /* DemoAppDelegate.m */; };
+		D0E61C378AB3C413B26BC6D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0589812EE1F702A7BBA34D /* main.m */; };
+		E6D504C189F7597E393CE1C7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D344C64A66F10D55590797E /* Localizable.strings */; };
+		EBD40371EBC1029DFDB78188 /* AutocompleteWithCustomColors.m in Sources */ = {isa = PBXBuildFile; fileRef = FC03FEE150596E9432F612DF /* AutocompleteWithCustomColors.m */; };
+		EFD682748EDAD72FD81EEF32 /* BaseDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D4BD9841268F97FD23E770 /* BaseDemoViewController.m */; };
+		F6D23BD5F5D60A53929AEA4C /* AutocompleteModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1502E6F1A86B1773138153B /* AutocompleteModalViewController.m */; };
+		FC0FA11747EC5527C19804F3 /* AutocompleteWithTextFieldController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB9E4A950DB2EA454486E47 /* AutocompleteWithTextFieldController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +116,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35AD018AC74272D3BC881045 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				C909AF9881D6F23C468852B2 /* GooglePlacesDemos */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
 		50B93CAB6D1F1E17540F6E78 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,18 +161,10 @@
 			path = Autocomplete;
 			sourceTree = "<group>";
 		};
-		6474F6E51B1B62FD7E19E38F /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				C909AF9881D6F23C468852B2 /* GooglePlacesDemos */,
-			);
-			name = Source;
-			sourceTree = "<group>";
-		};
 		7C4A8D45D6D1B907A8C0521E = {
 			isa = PBXGroup;
 			children = (
-				6474F6E51B1B62FD7E19E38F /* Source */,
+				35AD018AC74272D3BC881045 /* Source */,
 				50B93CAB6D1F1E17540F6E78 /* Frameworks */,
 				87ED31F365F5BCA83FBDE8E8 /* Products */,
 			);
@@ -309,9 +309,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9961132B60CA522AA53FF0B2 /* LaunchScreen.storyboard in Resources */,
-				4B998C75A942D73EB0D61DA5 /* Localizable.strings in Resources */,
-				98F81E82D94C6D2274795F99 /* PlacesDemoAssets.xcassets in Resources */,
+				31D6B2E5F98EAFB617CD06F5 /* LaunchScreen.storyboard in Resources */,
+				E6D504C189F7597E393CE1C7 /* Localizable.strings in Resources */,
+				AE85226515D9C6FF5C65E063 /* PlacesDemoAssets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,20 +322,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D39BA183CC8EF9681F42003 /* DemoData.m in Sources */,
-				A454A2BEF2C946696364B4BD /* DemoListViewController.m in Sources */,
-				3836B4BAF22DC69481A763C6 /* FindPlaceLikelihoodListViewController.m in Sources */,
-				11B0770FDB10317396772FF4 /* AutocompleteWithSearchViewController.m in Sources */,
-				52EEC38B8E272054E666B986 /* AutocompletePushViewController.m in Sources */,
-				3D98F2BBEF62785171F84182 /* AutocompleteBaseViewController.m in Sources */,
-				5075D7C43A46E44872F24CD6 /* AutocompleteWithTextFieldController.m in Sources */,
-				941E6ABEE44140E5082343AE /* AutocompleteWithCustomColors.m in Sources */,
-				AFAA1D29FCFA27FD1F6C49DA /* AutocompleteModalViewController.m in Sources */,
-				E2A8F8C664AFE8282FA2241C /* PagingPhotoView.m in Sources */,
-				0CD66DB620B6661F1EF6665A /* main.m in Sources */,
-				DBDD7ECF98957E732F60B1CD /* BaseDemoViewController.m in Sources */,
-				392FC92D8B566E346E88DCBA /* DemoAppDelegate.m in Sources */,
-				7A46846201F9524E7D5AEA28 /* DemoSceneDelegate.m in Sources */,
+				0CD6473D3B603BAF22D49E3B /* DemoData.m in Sources */,
+				BA37D7F119D6FDA76033E5C0 /* DemoListViewController.m in Sources */,
+				509F7BAD46CC0A378DAADF5A /* FindPlaceLikelihoodListViewController.m in Sources */,
+				1116F9F0B67150BB9EEA91A2 /* AutocompleteWithSearchViewController.m in Sources */,
+				89695382034652B26F0F04B9 /* AutocompletePushViewController.m in Sources */,
+				A202FFF423560E9EB6887FBF /* AutocompleteBaseViewController.m in Sources */,
+				FC0FA11747EC5527C19804F3 /* AutocompleteWithTextFieldController.m in Sources */,
+				EBD40371EBC1029DFDB78188 /* AutocompleteWithCustomColors.m in Sources */,
+				F6D23BD5F5D60A53929AEA4C /* AutocompleteModalViewController.m in Sources */,
+				8BA42AEFAD2EA0C45905EEC9 /* PagingPhotoView.m in Sources */,
+				D0E61C378AB3C413B26BC6D1 /* main.m in Sources */,
+				EFD682748EDAD72FD81EEF32 /* BaseDemoViewController.m in Sources */,
+				BD6A761F2C619599C7CE59E4 /* DemoAppDelegate.m in Sources */,
+				1304590E4181B16AF9375209 /* DemoSceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,7 +419,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ./GooglePlacesDemos/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LIBRARY_SEARCH_PATHS = (
 					.,
 					"$(SDKROOT)/System/Library/Frameworks",

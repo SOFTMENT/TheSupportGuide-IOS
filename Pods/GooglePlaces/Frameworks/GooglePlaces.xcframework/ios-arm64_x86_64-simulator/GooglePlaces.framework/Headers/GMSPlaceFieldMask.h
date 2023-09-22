@@ -14,7 +14,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- * \defgroup PlaceField GMSPlaceField
+ * \defgroup GMSPlaceField GMSPlaceField
  * @{
  */
 
@@ -60,6 +60,9 @@ typedef NS_OPTIONS(uint64_t, GMSPlaceField) {
   GMSPlaceFieldServesVegetarianFood = GMSPlaceFieldName << 30,
   GMSPlaceFieldWheelchairAccessibleEntrance = GMSPlaceFieldName
                                               << 31,
+  GMSPlaceFieldCurrentOpeningHours = GMSPlaceFieldName << 32,
+  GMSPlaceFieldSecondaryOpeningHours = GMSPlaceFieldName << 33,
+  GMSPlaceFieldEditorialSummary = GMSPlaceFieldName << 34,
   GMSPlaceFieldAll = UINT64_MAX,
 };
 

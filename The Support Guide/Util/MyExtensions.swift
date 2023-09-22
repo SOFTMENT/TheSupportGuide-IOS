@@ -539,7 +539,7 @@ extension UIViewController {
     }
     
     func getB2BVouchersCount(by b2bId : String, completion : @escaping (Int)-> Void) {
-        let query = FirebaseStoreManager.db.collection("Businesses").document(b2bId).collection("Vouchers")
+        let query = FirebaseStoreManager.db.collection("Businesses").document(b2bId).collection("Vouchers").order(by: "valid",descending: true).whereField("valid", isGreaterThanOrEqualTo: Date())
         let countQuery = query.count
         
             countQuery.getAggregation(source: .server) { snapshot, error in

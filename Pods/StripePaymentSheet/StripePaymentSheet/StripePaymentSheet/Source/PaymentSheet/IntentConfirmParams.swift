@@ -26,13 +26,12 @@ class IntentConfirmParams {
 
     let paymentMethodParams: STPPaymentMethodParams
     let paymentMethodType: PaymentSheet.PaymentMethodType
+    let confirmPaymentMethodOptions: STPConfirmPaymentMethodOptions
 
     /// True if the customer opts to save their payment method for future payments.
     var saveForFutureUseCheckboxState: SaveForFutureUseCheckboxState = .hidden
     /// If `true`, a mandate (e.g. "By continuing you authorize Foo Corp to use your payment details for recurring payments...") was displayed to the customer.
     var didDisplayMandate: Bool = false
-    /// - Note: PaymentIntent-only
-    var paymentMethodOptions: STPConfirmPaymentMethodOptions?
 
     var linkedBank: LinkedBank?
 
@@ -70,41 +69,7 @@ class IntentConfirmParams {
     init(params: STPPaymentMethodParams, type: PaymentSheet.PaymentMethodType) {
         self.paymentMethodType = type
         self.paymentMethodParams = params
-    }
-
-    func makeParams(
-        paymentIntentClientSecret: String,
-        configuration: PaymentSheet.Configuration,
-        paymentMethodID: String?
-    ) -> STPPaymentIntentParams {
-        let params = STPPaymentIntentParams(clientSecret: paymentIntentClientSecret)
-        // If a payment method ID was provided use that, otherwise use the payment method params
-        if let paymentMethodID = paymentMethodID {
-            params.paymentMethodId = paymentMethodID
-        } else {
-            params.paymentMethodParams = paymentMethodParams
-        }
-
-        let options = paymentMethodOptions ?? STPConfirmPaymentMethodOptions()
-        options.setSetupFutureUsageIfNecessary(
-            saveForFutureUseCheckboxState == .selected,
-            paymentMethodType: paymentMethodType,
-            customer: configuration.customer
-        )
-        params.paymentMethodOptions = options
-
-        return params
-    }
-
-    func makeParams(setupIntentClientSecret: String, paymentMethodID: String?) -> STPSetupIntentConfirmParams {
-        let params = STPSetupIntentConfirmParams(clientSecret: setupIntentClientSecret)
-        // If a payment method ID was provided use that, otherwise use the payment method params
-        if let paymentMethodID = paymentMethodID {
-            params.paymentMethodID = paymentMethodID
-        } else {
-            params.paymentMethodParams = paymentMethodParams
-        }
-        return params
+        self.confirmPaymentMethodOptions = STPConfirmPaymentMethodOptions()
     }
 
     func makeDashboardParams(
@@ -116,8 +81,6 @@ class IntentConfirmParams {
         params.paymentMethodId = paymentMethodID
 
         // Dashboard only supports a specific payment flow today
-        assert(paymentMethodOptions == nil)
-
         let options = STPConfirmPaymentMethodOptions()
         options.setSetupFutureUsageIfNecessary(
             saveForFutureUseCheckboxState == .selected,
@@ -129,6 +92,36 @@ class IntentConfirmParams {
         options.setMoto()
 
         return params
+    }
+
+    /// Applies the values of `Configuration.defaultBillingDetails` to this IntentConfirmParams if `attachDefaultsToPaymentMethod` is true.
+    /// - Note: This overwrites `paymentMethodParams.billingDetails`.
+    func setDefaultBillingDetailsIfNecessary(for configuration: PaymentSheet.Configuration) {
+        setDefaultBillingDetailsIfNecessary(defaultBillingDetails: configuration.defaultBillingDetails, billingDetailsCollectionConfiguration: configuration.billingDetailsCollectionConfiguration)
+    }
+
+    /// Applies the values of `Configuration.defaultBillingDetails` to this IntentConfirmParams if `attachDefaultsToPaymentMethod` is true.
+    /// - Note: This overwrites `paymentMethodParams.billingDetails`.
+    func setDefaultBillingDetailsIfNecessary(for configuration: CustomerSheet.Configuration) {
+        setDefaultBillingDetailsIfNecessary(defaultBillingDetails: configuration.defaultBillingDetails, billingDetailsCollectionConfiguration: configuration.billingDetailsCollectionConfiguration)
+    }
+
+    private func setDefaultBillingDetailsIfNecessary(defaultBillingDetails: PaymentSheet.BillingDetails, billingDetailsCollectionConfiguration: PaymentSheet.BillingDetailsCollectionConfiguration) {
+        guard billingDetailsCollectionConfiguration.attachDefaultsToPaymentMethod else {
+           return
+        }
+        if let name = defaultBillingDetails.name {
+            paymentMethodParams.nonnil_billingDetails.name = name
+        }
+        if let phone = defaultBillingDetails.phone {
+            paymentMethodParams.nonnil_billingDetails.phone = phone
+        }
+        if let email = defaultBillingDetails.email {
+            paymentMethodParams.nonnil_billingDetails.email = email
+        }
+        if defaultBillingDetails.address != .init() {
+            paymentMethodParams.nonnil_billingDetails.address = STPPaymentMethodAddress(address: defaultBillingDetails.address)
+        }
     }
 }
 
