@@ -73,6 +73,10 @@ class FranchiseDashboardViewController : UIViewController {
         }
     }
     
+    func deleteRecentB2BAndSales(id : String){
+        FirebaseStoreManager.db.collection("Franchises").document(FranchiseModel.data!.uid ?? "123").collection("Recents").document(id).delete()
+    }
+    
     @objc func businessViewClicked(){
         performSegue(withIdentifier: "adminBusinessSaleSeg", sender: nil)
     }
@@ -154,7 +158,8 @@ extension FranchiseDashboardViewController : UITableViewDelegate, UITableViewDat
             self.getB2bAndFundraiser(by: recentModel.uid ?? "123", franchiseId: FranchiseModel.data!.uid ?? "123", type: recentModel.type! == "b2b" ? "Businesses" : "Fundraisers") { businessModel, fundrasierModel, error in
                 
                 if error == error {
-                    self.recenAddedModels.remove(at: indexPath.row)
+                    self.deleteRecentB2BAndSales(id: recentModel.uid ?? "123")
+                    self.recenAddedModels.remove(recentModel)
                     self.tableView.reloadData()
                 }
                 else {
